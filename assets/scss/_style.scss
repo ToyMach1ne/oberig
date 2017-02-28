@@ -20,10 +20,9 @@
   19. Retina ready
 -------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,700,500,300italic&subset=cyrillic-ext,latin,cyrillic);
-
 @import url(http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic);
 
-@import "styleswitcher.css";
+/* @import "styleswitcher.css"; */
 
 /* -----------------------------------
 
@@ -821,7 +820,7 @@ blockquote {
     content: "";
     width: 17px;
     height: 10px;
-    background: url("../images/blockquote_arrow.png") no-repeat;
+    background: url("../img/blockquote_arrow.png") no-repeat;
     position: absolute;
     left: 20px;
     bottom: -10px;
@@ -1457,7 +1456,7 @@ a.logo span {
     display: none;
     width: 32px;
     height: 32px;
-    background: url("../images/loader_2.gif") no-repeat;
+    background: url("../img/loader_2.gif") no-repeat;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1878,7 +1877,7 @@ a.logo span {
       content: "";
       width: 9px;
       height: 9px;
-      background: url("../images/plusminus.png") no-repeat;
+      background: url("../img/plusminus.png") no-repeat;
       position: absolute;
       display: block;
       top: 50%;
@@ -1893,7 +1892,7 @@ a.logo span {
       content: "";
       width: 9px;
       height: 9px;
-      background: url("../images/plusminus.png") no-repeat;
+      background: url("../img/plusminus.png") no-repeat;
       position: absolute;
       display: block;
       top: 50%;
@@ -3430,7 +3429,7 @@ aside .addthis_widget_container {
     content: "";
     display: block;
     position: absolute;
-    background: url("../images/comment_arrow.png") no-repeat;
+    background: url("../img/comment_arrow.png") no-repeat;
     width: 9px;
     height: 18px;
     left: -9px;
@@ -3789,7 +3788,7 @@ input {
       margin-right: 9px;
       width: 22px;
       height: 22px;
-      background: url("../images/checkbox.png") no-repeat;
+      background: url("../img/checkbox.png") no-repeat;
     }
   }
   &[type="radio"] + label:before {
@@ -3799,7 +3798,7 @@ input {
     margin-right: 9px;
     width: 22px;
     height: 22px;
-    background: url("../images/checkbox.png") no-repeat;
+    background: url("../img/checkbox.png") no-repeat;
   }
 }
 
@@ -3810,11 +3809,11 @@ input {
   margin-right: 9px;
   width: 22px;
   height: 22px;
-  background: url("../images/checkbox.png") no-repeat;
+  background: url("../img/checkbox.png") no-repeat;
 }
 
 input[type="radio"] + label:before, .block_select:before {
-  background: url("../images/radio.png") no-repeat 0 0;
+  background: url("../img/radio.png") no-repeat 0 0;
   overflow: hidden;
 }
 
@@ -5077,27 +5076,27 @@ fieldset legend {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144 dpi) {
   blockquote:after {
-    background-image: url("../images/blockquote_arrow@2x.png");
+    background-image: url("../img/blockquote_arrow@2x.png");
     background-size: 17px 10px;
   }
   .comment:after {
-    background-image: url("../images/comment_arrow@2x.png");
+    background-image: url("../img/comment_arrow@2x.png");
     background-size: 9px 18px;
   }
   .categories_list a > span {
     &:before, &:after {
-      background-image: url("../images/plusminus@2x.png");
+      background-image: url("../img/plusminus@2x.png");
       background-size: 9px 10px;
     }
   }
   input[type="radio"] + label:before {
-    background-image: url("../images/radio@2x.png");
+    background-image: url("../img/radio@2x.png");
     background-size: 22px 44px;
   }
   .block_select:before {
-    background-image: url("../images/radio@2x.png");
+    background-image: url("../img/radio@2x.png");
     background-size: 22px 44px;
-    background-image: url("../images/checkbox@2x.png");
+    background-image: url("../img/checkbox@2x.png");
     background-size: 22px 22px;
   }
 }

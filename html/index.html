@@ -5,22 +5,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Интернет-магазин цветов Выдумки — доставка цветов недорого по Москве.</title>
-    <!--<base href="http://vidumki.ru/">-->
-    <base href=".">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--meta info-->
     <meta name="description" content="Интернет-магазин цветов Выдумки осуществляет доставку цветов по Москве недорого. Доставка цветов на дом по Москве недорого из интернет-магазина цветов и подарков.">
     <link rel="icon" type="image/ico" href="http://vidumki.ru/favicon.ico">
     <!--stylesheet include-->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/settings.css">
     <link rel="stylesheet" href="css/camera.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="css/owl.transitions.css">
     <link rel="stylesheet" href="css/jquery.custom-scrollbar.css">
-    <link rel="stylesheet" href="css/style.css"> -->
-    <!-- font include
-    <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--font include-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <script id="facebook-jssdk" src="js/sdk.js"></script>
     <script src="js/modernizr.js"></script>
     <style type="text/css">
@@ -29,528 +27,12 @@
         display: none !important;
     }
     </style>
-    <!-- <link rel="stylesheet" href="css/default.css" type="text/css"> -->
-    <script type="text/javascript">
-    miniShop2 = {};
-    miniShop2Config = {
-        cssUrl: "/assets/components/minishop2/css/web/",
-        jsUrl: "/assets/components/minishop2/js/web/",
-        imagesUrl: "/assets/components/minishop2/images/web/",
-        actionUrl: "/assets/components/minishop2/action.php",
-        ctx: "web",
-        close_all_message: "закрыть все",
-        price_format: [2, ".", " "],
-        price_format_no_zeros: 1,
-        weight_format: [3, ".", " "],
-        weight_format_no_zeros: 1,
-        callbacksObjectTemplate: function() {
-            return {
-                before: function() { /*return false to prevent send data*/ },
-                response: {
-                    success: function(response) {},
-                    error: function(response) {}
-                },
-                ajax: {
-                    done: function(xhr) {},
-                    fail: function(xhr) {},
-                    always: function(xhr) {}
-                }
-            };
-        }
-    };
-    miniShop2.Callbacks = miniShop2Config.Callbacks = {
-        Cart: {
-            add: miniShop2Config.callbacksObjectTemplate(),
-            remove: miniShop2Config.callbacksObjectTemplate(),
-            change: miniShop2Config.callbacksObjectTemplate(),
-            clean: miniShop2Config.callbacksObjectTemplate()
-        },
-        Order: {
-            add: miniShop2Config.callbacksObjectTemplate(),
-            getcost: miniShop2Config.callbacksObjectTemplate(),
-            clean: miniShop2Config.callbacksObjectTemplate(),
-            submit: miniShop2Config.callbacksObjectTemplate(),
-            getRequired: miniShop2Config.callbacksObjectTemplate()
-        }
-    };
-    </script>
-    <style type="text/css">
-    .fb_hidden {
-        position: absolute;
-        top: -10000px;
-        z-index: 10001
-    }
-
-    .fb_reposition {
-        overflow: hidden;
-        position: relative
-    }
-
-    .fb_invisible {
-        display: none
-    }
-
-    .fb_reset {
-        background: none;
-        border: 0;
-        border-spacing: 0;
-        color: #000;
-        cursor: auto;
-        direction: ltr;
-        font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
-        font-size: 11px;
-        font-style: normal;
-        font-variant: normal;
-        font-weight: normal;
-        letter-spacing: normal;
-        line-height: 1;
-        margin: 0;
-        overflow: visible;
-        padding: 0;
-        text-align: left;
-        text-decoration: none;
-        text-indent: 0;
-        text-shadow: none;
-        text-transform: none;
-        visibility: visible;
-        white-space: normal;
-        word-spacing: normal
-    }
-
-    .fb_reset>div {
-        overflow: hidden
-    }
-
-    .fb_link img {
-        border: none
-    }
-
-    @keyframes fb_transform {
-        from {
-            opacity: 0;
-            transform: scale(.95)
-        }
-        to {
-            opacity: 1;
-            transform: scale(1)
-        }
-    }
-
-    .fb_animate {
-        animation: fb_transform .3s forwards
-    }
-
-    .fb_dialog {
-        background: rgba(82, 82, 82, .7);
-        position: absolute;
-        top: -10000px;
-        z-index: 10001
-    }
-
-    .fb_reset .fb_dialog_legacy {
-        overflow: visible
-    }
-
-    .fb_dialog_advanced {
-        padding: 10px;
-        -moz-border-radius: 8px;
-        -webkit-border-radius: 8px;
-        border-radius: 8px
-    }
-
-    .fb_dialog_content {
-        background: #fff;
-        color: #333
-    }
-
-    .fb_dialog_close_icon {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
-        _background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);
-        cursor: pointer;
-        display: block;
-        height: 15px;
-        position: absolute;
-        right: 18px;
-        top: 17px;
-        width: 15px
-    }
-
-    .fb_dialog_mobile .fb_dialog_close_icon {
-        top: 5px;
-        left: 5px;
-        right: auto
-    }
-
-    .fb_dialog_padding {
-        background-color: transparent;
-        position: absolute;
-        width: 1px;
-        z-index: -1
-    }
-
-    .fb_dialog_close_icon:hover {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;
-        _background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)
-    }
-
-    .fb_dialog_close_icon:active {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;
-        _background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)
-    }
-
-    .fb_dialog_loader {
-        background-color: #f6f7f9;
-        border: 1px solid #606060;
-        font-size: 24px;
-        padding: 20px
-    }
-
-    .fb_dialog_top_left,
-    .fb_dialog_top_right,
-    .fb_dialog_bottom_left,
-    .fb_dialog_bottom_right {
-        height: 10px;
-        width: 10px;
-        overflow: hidden;
-        position: absolute
-    }
-
-    .fb_dialog_top_left {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;
-        left: -10px;
-        top: -10px
-    }
-
-    .fb_dialog_top_right {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;
-        right: -10px;
-        top: -10px
-    }
-
-    .fb_dialog_bottom_left {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;
-        bottom: -10px;
-        left: -10px
-    }
-
-    .fb_dialog_bottom_right {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;
-        right: -10px;
-        bottom: -10px
-    }
-
-    .fb_dialog_vert_left,
-    .fb_dialog_vert_right,
-    .fb_dialog_horiz_top,
-    .fb_dialog_horiz_bottom {
-        position: absolute;
-        background: #525252;
-        filter: alpha(opacity=70);
-        opacity: .7
-    }
-
-    .fb_dialog_vert_left,
-    .fb_dialog_vert_right {
-        width: 10px;
-        height: 100%
-    }
-
-    .fb_dialog_vert_left {
-        margin-left: -10px
-    }
-
-    .fb_dialog_vert_right {
-        right: 0;
-        margin-right: -10px
-    }
-
-    .fb_dialog_horiz_top,
-    .fb_dialog_horiz_bottom {
-        width: 100%;
-        height: 10px
-    }
-
-    .fb_dialog_horiz_top {
-        margin-top: -10px
-    }
-
-    .fb_dialog_horiz_bottom {
-        bottom: 0;
-        margin-bottom: -10px
-    }
-
-    .fb_dialog_iframe {
-        line-height: 0
-    }
-
-    .fb_dialog_content .dialog_title {
-        background: #6d84b4;
-        border: 1px solid #365899;
-        color: #fff;
-        font-size: 14px;
-        font-weight: bold;
-        margin: 0
-    }
-
-    .fb_dialog_content .dialog_title>span {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
-        float: left;
-        padding: 5px 0 7px 26px
-    }
-
-    body.fb_hidden {
-        -webkit-transform: none;
-        height: 100%;
-        margin: 0;
-        overflow: visible;
-        position: absolute;
-        top: -10000px;
-        left: 0;
-        width: 100%
-    }
-
-    .fb_dialog.fb_dialog_mobile.loading {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
-        min-height: 100%;
-        min-width: 100%;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        z-index: 10001
-    }
-
-    .fb_dialog.fb_dialog_mobile.loading.centered {
-        width: auto;
-        height: auto;
-        min-height: initial;
-        min-width: initial;
-        background: none
-    }
-
-    .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
-        width: 100%
-    }
-
-    .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
-        background: none
-    }
-
-    .loading.centered #fb_dialog_loader_close {
-        color: #fff;
-        display: block;
-        padding-top: 20px;
-        clear: both;
-        font-size: 18px
-    }
-
-    #fb-root #fb_dialog_ipad_overlay {
-        background: rgba(0, 0, 0, .45);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        width: 100%;
-        min-height: 100%;
-        z-index: 10000
-    }
-
-    #fb-root #fb_dialog_ipad_overlay.hidden {
-        display: none
-    }
-
-    .fb_dialog.fb_dialog_mobile.loading iframe {
-        visibility: hidden
-    }
-
-    .fb_dialog_content .dialog_header {
-        -webkit-box-shadow: white 0 1px 1px -1px inset;
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));
-        border-bottom: 1px solid;
-        border-color: #1d4088;
-        color: #fff;
-        font: 14px Helvetica, sans-serif;
-        font-weight: bold;
-        text-overflow: ellipsis;
-        text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
-        vertical-align: middle;
-        white-space: nowrap
-    }
-
-    .fb_dialog_content .dialog_header table {
-        -webkit-font-smoothing: subpixel-antialiased;
-        height: 43px;
-        width: 100%
-    }
-
-    .fb_dialog_content .dialog_header td.header_left {
-        font-size: 12px;
-        padding-left: 5px;
-        vertical-align: middle;
-        width: 60px
-    }
-
-    .fb_dialog_content .dialog_header td.header_right {
-        font-size: 12px;
-        padding-right: 5px;
-        vertical-align: middle;
-        width: 60px
-    }
-
-    .fb_dialog_content .touchable_button {
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));
-        border: 1px solid #29487d;
-        -webkit-background-clip: padding-box;
-        -webkit-border-radius: 3px;
-        -webkit-box-shadow: rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;
-        display: inline-block;
-        margin-top: 3px;
-        max-width: 85px;
-        line-height: 18px;
-        padding: 4px 12px;
-        position: relative
-    }
-
-    .fb_dialog_content .dialog_header .touchable_button input {
-        border: none;
-        background: none;
-        color: #fff;
-        font: 12px Helvetica, sans-serif;
-        font-weight: bold;
-        margin: 2px -12px;
-        padding: 2px 6px 3px 6px;
-        text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
-    }
-
-    .fb_dialog_content .dialog_header .header_center {
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 18px;
-        text-align: center;
-        vertical-align: middle
-    }
-
-    .fb_dialog_content .dialog_content {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
-        border: 1px solid #555;
-        border-bottom: 0;
-        border-top: 0;
-        height: 150px
-    }
-
-    .fb_dialog_content .dialog_footer {
-        background: #f6f7f9;
-        border: 1px solid #555;
-        border-top-color: #ccc;
-        height: 40px
-    }
-
-    #fb_dialog_loader_close {
-        float: left
-    }
-
-    .fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
-        text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
-    }
-
-    .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
-        visibility: hidden
-    }
-
-    #fb_dialog_loader_spinner {
-        animation: rotateSpinner 1.2s linear infinite;
-        background-color: transparent;
-        background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        height: 24px;
-        width: 24px
-    }
-
-    @keyframes rotateSpinner {
-        0% {
-            transform: rotate(0deg)
-        }
-        100% {
-            transform: rotate(360deg)
-        }
-    }
-
-    .fb_iframe_widget {
-        display: inline-block;
-        position: relative
-    }
-
-    .fb_iframe_widget span {
-        display: inline-block;
-        position: relative;
-        text-align: justify
-    }
-
-    .fb_iframe_widget iframe {
-        position: absolute
-    }
-
-    .fb_iframe_widget_fluid_desktop,
-    .fb_iframe_widget_fluid_desktop span,
-    .fb_iframe_widget_fluid_desktop iframe {
-        max-width: 100%
-    }
-
-    .fb_iframe_widget_fluid_desktop iframe {
-        min-width: 220px;
-        position: relative
-    }
-
-    .fb_iframe_widget_lift {
-        z-index: 1
-    }
-
-    .fb_hide_iframes iframe {
-        position: relative;
-        left: -10000px
-    }
-
-    .fb_iframe_widget_loader {
-        position: relative;
-        display: inline-block
-    }
-
-    .fb_iframe_widget_fluid {
-        display: inline
-    }
-
-    .fb_iframe_widget_fluid span {
-        width: 100%
-    }
-
-    .fb_iframe_widget_loader iframe {
-        min-height: 32px;
-        z-index: 2;
-        zoom: 1
-    }
-
-    .fb_iframe_widget_loader .FB_Loader {
-        background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;
-        height: 32px;
-        width: 32px;
-        margin-left: -16px;
-        position: absolute;
-        left: 50%;
-        z-index: 4
-    }
-    </style>
+    <link rel="stylesheet" href="css/default.css" type="text/css">
 </head>
 
 <body>
     <!--boxed layout-->
     <div class="wide_layout relative w_xs_auto">
-        <!--[if (lt IE 9) | IE 9]>
-        <div style="background:#fff;padding:8px 0 10px;">
-        <div class="container" style="width:1170px;"><div class="row wrapper"><div class="clearfix" style="padding:9px 0 0;float:left;width:83%;"><i class="fa fa-exclamation-triangle scheme_color f_left m_right_10" style="font-size:25px;color:#e74c3c;"></i><b style="color:#e74c3c;">Attention! This page may not display correctly.</b> <b>You are using an outdated version of Internet Explorer. For a faster, safer browsing experience.</b></div><div class="t_align_r" style="float:left;width:16%;"><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode" class="button_type_4 r_corners bg_scheme_color color_light d_inline_b t_align_c" target="_blank" style="margin-bottom:2px;">Update Now!</a></div></div></div></div>
-      <![endif]-->
-        <!--markup header-->
         <header role="banner">
             <!--header bottom part-->
             <section class="h_bot_part type_2 container">
@@ -621,7 +103,7 @@
                 <ul style="display: block; overflow: hidden; width: 100%; height: 100%; max-height: none;">
                     <li class="f_left" data-transition="slotslide-vertical" data-slotamount="7" style="width: 100%; height: 100%; overflow: hidden; visibility: visible; left: 0px; top: 0px; z-index: 20; opacity: 1;">
                         <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="center center" data-kenburns="undefined" data-easeme="undefined" data-bgfit="cover" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/assets/images/4236x2800-300dpi-krasivyj-buket-foto.jpg" data-src="/assets/images/4236x2800-300dpi-krasivyj-buket-foto.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;/assets/images/4236x2800-300dpi-krasivyj-buket-foto.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1;"></div>
+                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/img/4236x2800-300dpi-krasivyj-buket-foto.jpg" data-src="/img/4236x2800-300dpi-krasivyj-buket-foto.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;/img/4236x2800-300dpi-krasivyj-buket-foto.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1;"></div>
                         </div>
                         <div class="caption sft stb slider_title tt_uppercase t_align_l tp-caption start" data-x="center" data-y="78" data-speed="500" data-easing="ease" data-start="1400" style="min-height: 0px; min-width: 0px; line-height: 42px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 42px; left: 763.5px; top: 78px; visibility: visible; opacity: 1; transition: all 0s ease 0s; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);">
                             <span class="color_dark">Букеты с розами</span>
@@ -632,7 +114,7 @@
                     </li>
                     <li class="f_left" data-transition="slotslide-vertical" data-slotamount="7" style="width: 100%; height: 100%; overflow: hidden; opacity: 1; visibility: visible; left: 0px; top: 0px; z-index: 18;">
                         <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="center center" data-kenburns="undefined" data-easeme="undefined" data-bgfit="cover" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/assets/images/997867.jpg" data-src="/assets/images/997867.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;/assets/images/997867.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 0;"></div>
+                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/img/997867.jpg" data-src="/img/997867.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;/img/997867.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 0;"></div>
                         </div>
                         <div class="caption sft stb slider_title tt_uppercase t_align_l tp-caption start" data-x="center" data-y="78" data-speed="500" data-easing="ease" data-start="1400" style="min-height: 0px; min-width: 0px; line-height: 42px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 42px; left: 719px; top: 78px; visibility: visible; opacity: 0; transition: all 0s ease 0s; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 50, 0, 1);">
                             <span class="color_dark">Распродажа букетов</span>
@@ -1756,25 +1238,6 @@
                     <p class="f_left f_mxs_none m_mxs_bottom_10">
                         © 2015 <span class="color_light">Интернет-магазин цветов и подарков Выдумки.</span>
                     </p>
-                    <ul class="f_right horizontal_list clearfix f_mxs_none d_mxs_inline_b">
-                        <li class="m_left_5">
-                            <!--LiveInternet counter-->
-                            <script type="text/javascript">
-                            <!--
-                            document.write("<a href='//www.liveinternet.ru/click' " +
-                                    "target=_blank><img src='//counter.yadro.ru/hit?t44.6;r" +
-                                    escape(document.referrer) + ((typeof(screen) == "undefined") ? "" :
-                                        ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
-                                            screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
-                                    ";" + Math.random() +
-                                    "' alt='' title='LiveInternet' " +
-                                    "border='0' width='31' height='31'><\/a>")
-                                //-->
-                            </script>
-                            <a href="http://www.liveinternet.ru/click" target="_blank"><img src="http://counter.yadro.ru/hit?t44.6;r;s1920*1080*24;uhttp%3A//vidumki.ru/;0.18524040271828723" alt="" title="LiveInternet" border="0" width="31" height="31" hidden="" style="display: none !important;"></a>
-                            <!--/LiveInternet-->
-                        </li>
-                    </ul>
                 </div>
             </div>
         </footer>
@@ -1783,20 +1246,10 @@
         <li class="relative">
             <button class="sw_button t_align_c vk"><i class="fa fa-vk"></i></button>
             <div class="sw_content">
-                <script type="text/javascript" src="img/openapi.js"></script>
+                <script type="text/javascript" src="js/openapi.js"></script>
                 <!-- VK Widget -->
                 <div id="vk_groups" style="height: 300px; width: 220px; background: none;">
                 </div>
-                <script type="text/javascript">
-                VK.Widgets.Group("vk_groups", {
-                    mode: 0,
-                    width: "220",
-                    height: "300",
-                    color1: 'FFFFFF',
-                    color2: '2B587A',
-                    color3: '5B7FA6'
-                }, 97982855);
-                </script>
             </div>
         </li>
         <!--facebook-->
