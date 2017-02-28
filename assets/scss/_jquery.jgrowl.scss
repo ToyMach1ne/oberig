@@ -1,0 +1,131 @@
+//colors
+$white: #fff;
+$black: #000;
+
+//fonts
+$font_0: Tahoma;
+$font_1: Arial;
+$font_2: Helvetica;
+$font_3: sans-serif;
+
+//@extend-elements
+//original selectors
+//div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer
+%extend_1 {
+  background-color: $black;
+  opacity: .85;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  zoom: 1;
+  width: 235px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: $font_0, $font_1, $font_2, $font_3;
+  font-size: 1em;
+  text-align: left;
+  display: none;
+  margin: 10px;
+}
+
+
+div {
+  &.jGrowl {
+    z-index: 9999;
+    color: $white;
+    font-size: 12px;
+    position: absolute;
+    &.top-left {
+      left: 0;
+      top: 0;
+    }
+    &.top-right {
+      right: 0;
+      top: 0;
+    }
+    &.bottom-left {
+      left: 0;
+      bottom: 0;
+    }
+    &.bottom-right {
+      right: 0;
+      bottom: 0;
+    }
+    &.center {
+      top: 0;
+      width: 50%;
+      left: 25%;
+    }
+    div {
+      &.jGrowl-notification {
+        @extend %extend_1;
+        min-height: 40px;
+        div {
+          &.jGrowl-header {
+            font-weight: bold;
+            font-size: .85em;
+          }
+          &.jGrowl-close {
+            z-index: 99;
+            float: right;
+            font-weight: bold;
+            font-size: 1em;
+            cursor: pointer;
+          }
+        }
+      }
+      &.jGrowl-closer {
+        @extend %extend_1;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        cursor: pointer;
+        font-size: .9em;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  }
+  &.ie6 {
+    position: absolute;
+    &.top-right {
+      right: auto;
+      bottom: auto;
+      left: expression((0 - jGrowl.offsetWidth +(document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) +(ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) +'px' );
+      top: expression((0 +(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) +'px' );
+    }
+    &.top-left {
+      left: expression((0 +(ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) +'px' );
+      top: expression((0 +(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) +'px' );
+    }
+    &.bottom-right {
+      left: expression((0 - jGrowl.offsetWidth +(document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) +(ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) +'px' );
+      top: expression((0 - jGrowl.offsetHeight +(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) +(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) +'px' );
+    }
+    &.bottom-left {
+      left: expression((0 +(ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) +'px' );
+      top: expression((0 - jGrowl.offsetHeight +(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight ) +(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) +'px' );
+    }
+    &.center {
+      left: expression((0 +(ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) +'px' );
+      top: expression((0 +(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) +'px' );
+      width: 100%;
+    }
+  }
+  &.center div {
+    &.jGrowl-notification {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.jGrowl-closer {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+@media print {
+  div.jGrowl {
+    display: none;
+  }
+}
+body > div.jGrowl {
+  position: fixed;
+}
