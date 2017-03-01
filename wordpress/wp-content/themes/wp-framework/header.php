@@ -27,7 +27,7 @@
                 <div class="clearfix row">
                     <div class="col-lg-4 col-md-5 col-sm-4 t_align_c st_xs_align_c">
                         <p>&nbsp;</p>
-                        <p class="f_size_big default_t_color">+7&nbsp;(903)&nbsp;130-24-38</p>
+                        <p class="f_size_big default_t_color"><?php the_field('header_phone', 30); ?></p>
                         <p>&nbsp;</p>
                     </div>
                     <div class="col-lg-8 col-md-7 col-sm-8 clearfix t_xs_align_c">
@@ -41,8 +41,8 @@
                             <li class="m_left_5 relative container3d" id="shopping_button">
                                 <a role="button" href="http://vidumki.ru/cart.html" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
                                     <span class="d_inline_middle shop_icon">
-    <i class="fa fa-shopping-cart"></i>
-   <span class="count tr_delay_hover type_2 circle t_align_c ms2_total_count">0</span>
+                                      <i class="fa fa-shopping-cart"></i>
+                                      <span class="count tr_delay_hover type_2 circle t_align_c ms2_total_count">0</span>
                                     </span>
                                     <b><span class="ms2_total_cost">0</span>&nbsp;руб.</b>
                                 </a>

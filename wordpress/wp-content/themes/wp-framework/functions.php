@@ -653,7 +653,7 @@ function disable_emojicons_tinymce( $plugins ) {
   }
 }
 
-
+add_theme_support( 'woocommerce' );
 
 
 

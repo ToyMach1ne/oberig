@@ -1,47 +1,47 @@
 <?php /* Template Name: Home */ get_header(); ?>
         <!--slider-->
-        <section class="revolution_slider" style="overflow: visible;">
-            <div class="r_slider revslider-initialised tp-simpleresponsive" id="revslider-602" style="height: 288px;">
-                <ul style="display: block; overflow: hidden; width: 100%; height: 100%; max-height: none;">
-                    <li class="f_left" data-transition="slotslide-vertical" data-slotamount="7" style="width: 100%; height: 100%; overflow: hidden; visibility: visible; left: 0px; top: 0px; z-index: 20; opacity: 1;">
-                        <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="center center" data-kenburns="undefined" data-easeme="undefined" data-bgfit="cover" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/img/4236x2800-300dpi-krasivyj-buket-foto.jpg" data-src="/<?php echo get_template_directory_uri(); ?>/img/4236x2800-300dpi-krasivyj-buket-foto.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;/<?php echo get_template_directory_uri(); ?>/img/4236x2800-300dpi-krasivyj-buket-foto.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1;"></div>
+        <section class="revolution_slider">
+            <div class="r_slider revslider-initialised tp-simpleresponsive" id="revslider-602">
+                <ul>
+                    <li class="f_left" data-transition="slotslide-vertical" data-slotamount="7" style="">
+                        <div class="slotholder" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="center center" data-kenburns="undefined" data-easeme="undefined" data-bgfit="cover" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
+                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/img/4236x2800-300dpi-krasivyj-buket-foto.jpg" data-src="/<?php echo get_template_directory_uri(); ?>/img/4236x2800-300dpi-krasivyj-buket-foto.jpg"></div>
                         </div>
-                        <div class="caption sft stb slider_title tt_uppercase t_align_l tp-caption start" data-x="center" data-y="78" data-speed="500" data-easing="ease" data-start="1400" style="min-height: 0px; min-width: 0px; line-height: 42px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 42px; left: 763.5px; top: 78px; visibility: visible; opacity: 1; transition: all 0s ease 0s; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);">
+                        <div class="caption sft stb slider_title tt_uppercase t_align_l tp-caption start" data-x="center" data-y="78" data-speed="500" data-easing="ease" data-start="1400">
                             <span class="color_dark">Букеты с розами</span>
                         </div>
-                        <div class="caption lfb ltt color_light tp-caption start" data-x="center" data-y="178" data-speed="500" data-start="1700" style="min-height: 0px; min-width: 0px; line-height: 21px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 14px; left: 875.5px; top: 178px; visibility: visible; opacity: 1; transition: all 0s ease 0s; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 0, 0, 1);">
+                        <div class="caption lfb ltt color_light tp-caption start" data-x="center" data-y="178" data-speed="500" data-start="1700">
                             <a href="http://vidumki.ru/bannerclick/8" role="button" class="button_type_4 bg_scheme_color color_light r_corners tt_uppercase">Смотреть</a>
                         </div>
                     </li>
-                    <li class="f_left" data-transition="slotslide-vertical" data-slotamount="7" style="width: 100%; height: 100%; overflow: hidden; opacity: 1; visibility: visible; left: 0px; top: 0px; z-index: 18;">
-                        <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="center center" data-kenburns="undefined" data-easeme="undefined" data-bgfit="cover" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
-                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/<?php echo get_template_directory_uri(); ?>/img/997867.jpg" data-src="/img/997867.jpg" style="background-color: rgba(0, 0, 0, 0); background-repeat: no-repeat; background-image: url(&quot;/<?php echo get_template_directory_uri(); ?>/img/997867.jpg&quot;); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 0;"></div>
+                    <li class="f_left" data-transition="slotslide-vertical" data-slotamount="7">
+                        <div class="slotholder" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="center center" data-kenburns="undefined" data-easeme="undefined" data-bgfit="cover" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined">
+                            <div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="/<?php echo get_template_directory_uri(); ?>/img/997867.jpg" data-src="/img/997867.jpg"></div>
                         </div>
-                        <div class="caption sft stb slider_title tt_uppercase t_align_l tp-caption start" data-x="center" data-y="78" data-speed="500" data-easing="ease" data-start="1400" style="min-height: 0px; min-width: 0px; line-height: 42px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 42px; left: 719px; top: 78px; visibility: visible; opacity: 0; transition: all 0s ease 0s; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, 50, 0, 1);">
+                        <div class="caption sft stb slider_title tt_uppercase t_align_l tp-caption start" data-x="center" data-y="78" data-speed="500" data-easing="ease" data-start="1400">
                             <span class="color_dark">Распродажа букетов</span>
                         </div>
-                        <div class="caption lfb ltt color_light tp-caption start" data-x="center" data-y="178" data-speed="500" data-start="1700" style="min-height: 0px; min-width: 0px; line-height: 21px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 14px; left: 875.5px; top: 178px; visibility: visible; opacity: 0; transition: all 0s ease 0s; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, -348, 0, 1);">
+                        <div class="caption lfb ltt color_light tp-caption start" data-x="center" data-y="178" data-speed="500" data-start="1700">
                             <a href="http://vidumki.ru/bannerclick/9" role="button" class="button_type_4 bg_scheme_color color_light r_corners tt_uppercase">Смотреть</a>
                         </div>
                     </li>
                 </ul>
-                <div class="tp-loader spinner0" style="visibility: hidden; opacity: 0;">
+                <div class="tp-loader spinner0">
                     <div class="dot1"></div>
                     <div class="dot2"></div>
                     <div class="bounce1"></div>
                     <div class="bounce2"></div>
                     <div class="bounce3"></div>
                 </div>
-                <div class="tp-bannertimer" style="width: 91.36%; visibility: hidden;"></div>
+                <div class="tp-bannertimer"></div>
             </div>
-            <div class="tp-bullets simplebullets round" style="bottom: 15px; left: 50%; margin-left: -15px;">
+            <div class="tp-bullets simplebullets round">
                 <div class="bullet first selected"></div>
                 <div class="bullet last"></div>
                 <div class="tpclear"></div>
             </div>
-            <div style="position: absolute; margin-top: -30px; left: 40px; top: 144px;" class="tp-leftarrow tparrows default"><i class="fa fa-angle-left"></i></div>
-            <div style="position: absolute; margin-top: -30px; right: 40px; top: 144px;" class="tp-rightarrow tparrows default"><i class="fa fa-angle-right"></i></div>
+            <div class="tp-leftarrow tparrows default"><i class="fa fa-angle-left"></i></div>
+            <div class="tp-rightarrow tparrows default"><i class="fa fa-angle-right"></i></div>
         </section>
         <!--content-->
         <div class="page_content_offset">
@@ -62,8 +62,8 @@
                     </li>
                 </ul>
                 <!--products-->
-                <section class="products_container clearfix m_bottom_25 m_sm_bottom_15 isotope" style="position: relative; overflow: hidden; height: 4450px;">
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px);">
+                <section class="products_container clearfix m_bottom_25 m_sm_bottom_15 isotope">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/korobochka-s-czvetami%C2%ABniagarskij-vodopad-%C2%BB.html" class="d_block relative pp_wrap">
@@ -87,7 +87,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 0px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-gerberi/buket-gerber%C2%ABfioletovaya-pudra%C2%BB.html" class="d_block relative pp_wrap">
@@ -111,7 +111,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 0px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-chrizantemi/buket-s-xrizantemami%C2%ABpablo%C2%BB.html" class="d_block relative pp_wrap">
@@ -134,7 +134,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 0px, 0px);">
+                    <div class="product_item  hit new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/buket-iz-roz-%C2%ABimperatricza%C2%BB.html" class="d_block relative pp_wrap">
@@ -158,7 +158,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 445px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-gerberi/buket-iz-gerber%C2%ABbelaya-strekoza-lyubvi%C2%BB.html" class="d_block relative pp_wrap">
@@ -181,7 +181,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 445px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/buket-iz-roz%C2%ABmalinovyij-kustik%C2%BB.html" class="d_block relative pp_wrap">
@@ -205,7 +205,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 445px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-chrizantemi/vesna-v-afrike.html" class="d_block relative pp_wrap">
@@ -228,7 +228,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 445px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/sirenevyij-lyod.html" class="d_block relative pp_wrap">
@@ -252,7 +252,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 890px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/nit-lyubvi.html" class="d_block relative pp_wrap">
@@ -276,7 +276,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 890px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-gvozdiki/sochnaya-yagoda.html" class="d_block relative pp_wrap">
@@ -300,7 +300,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 890px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/siyanie-schastya.html" class="d_block relative pp_wrap">
@@ -323,7 +323,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 890px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/solnechnoe-kopyo.html" class="d_block relative pp_wrap">
@@ -347,7 +347,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit specials isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 1335px, 0px);">
+                    <div class="product_item  hit specials isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/osobyie-buketyi/bozhya-korovka.html" class="d_block relative pp_wrap">
@@ -372,7 +372,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 1335px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/tanecz-vodyi.html" class="d_block relative pp_wrap">
@@ -396,7 +396,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 1335px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/goryachee-plamya.html" class="d_block relative pp_wrap">
@@ -420,7 +420,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 1335px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/orlinoe-gnezdo.html" class="d_block relative pp_wrap">
@@ -444,7 +444,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 1780px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/czitrusovyij-koktejl.html" class="d_block relative pp_wrap">
@@ -468,7 +468,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 1780px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/plamya-drakona.html" class="d_block relative pp_wrap">
@@ -492,7 +492,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  specials isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 1780px, 0px);">
+                    <div class="product_item  specials isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/wedding/rozovyij-tanecz.html" class="d_block relative pp_wrap">
@@ -516,7 +516,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 1780px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-chrizantemi/dvulikaya-gora.html" class="d_block relative pp_wrap">
@@ -540,7 +540,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 2225px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/smurfeta.html" class="d_block relative pp_wrap">
@@ -564,7 +564,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 2225px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/plyazhnyij-zakat.html" class="d_block relative pp_wrap">
@@ -588,7 +588,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 2225px, 0px);">
+                    <div class="product_item  hit new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/yagodnoe-varenie.html" class="d_block relative pp_wrap">
@@ -612,7 +612,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 2225px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/lesnoj-xameleon.html" class="d_block relative pp_wrap">
@@ -636,7 +636,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 2670px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/utro-prerij.html" class="d_block relative pp_wrap">
@@ -660,7 +660,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 2670px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/korobochka-tajnyij-sad.html" class="d_block relative pp_wrap">
@@ -683,7 +683,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit specials isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 2670px, 0px);">
+                    <div class="product_item  hit specials isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/korobochka-oblaka.html" class="d_block relative pp_wrap">
@@ -708,7 +708,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 2670px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/korobochka-briz.html" class="d_block relative pp_wrap">
@@ -732,7 +732,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 3115px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/korobochka-alyij-zakat.html" class="d_block relative pp_wrap">
@@ -755,7 +755,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 3115px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-gerberi/gerberyi-15.html" class="d_block relative pp_wrap">
@@ -779,7 +779,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 3115px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-gerberi/gerberyi-5.html" class="d_block relative pp_wrap">
@@ -803,7 +803,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 3115px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-orhidei/orxidei-4.html" class="d_block relative pp_wrap">
@@ -826,7 +826,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 3560px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-chrizantemi/xrizantemyi-6.html" class="d_block relative pp_wrap">
@@ -850,7 +850,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  new isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 3560px, 0px);">
+                    <div class="product_item  new isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-gvozdiki/gvozdiki-5.html" class="d_block relative pp_wrap">
@@ -873,7 +873,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  specials isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(584px, 3560px, 0px);">
+                    <div class="product_item  specials isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bouquets-gvozdiki/gvozdika-1.html" class="d_block relative pp_wrap">
@@ -897,7 +897,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  specials isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(876px, 3560px, 0px);">
+                    <div class="product_item  specials isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/buket-flamingo.html" class="d_block relative pp_wrap">
@@ -921,7 +921,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 4005px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/buket-luna.html" class="d_block relative pp_wrap">
@@ -945,7 +945,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <div class="product_item  hit isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(292px, 4005px, 0px);">
+                    <div class="product_item  hit isotope-item">
                         <figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
                             <!--product preview-->
                             <a href="http://vidumki.ru/buketyi/bukety-s-rozami/buket-granpri.html" class="d_block relative pp_wrap">
@@ -976,11 +976,9 @@
                         <a href="http://vidumki.ru/bannerclick/3" class="d_block banner wrapper r_corners relative m_xs_bottom_30">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/banner1.jpg" alt="Баннер 1">
                             <span class="banner_caption d_block vc_child t_align_c w_sm_auto">
-      <span class="d_inline_middle">
-        <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">
-            Каталог готовых букетов
-        </span>
-                            </span>
+                              <span class="d_inline_middle">
+                                <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">Каталог готовых букетов</span>
+                              </span>
                             </span>
                         </a>
                     </div>
@@ -988,10 +986,8 @@
                         <a href="http://vidumki.ru/bannerclick/4" class="d_block banner wrapper r_corners relative m_xs_bottom_30">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/banner2.jpg" alt="Баннер 2">
                             <span class="banner_caption d_block vc_child t_align_c w_sm_auto">
-      <span class="d_inline_middle">
-        <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">
-            Корзинки с цветами
-        </span>
+                              <span class="d_inline_middle">
+                                <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">Корзинки с цветами</span>
                             </span>
                             </span>
                         </a>
@@ -1002,11 +998,9 @@
                         <a href="http://vidumki.ru/bannerclick/5" class="d_block banner wrapper r_corners relative m_xs_bottom_30">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/banner3.jpg" alt="Баннер 4">
                             <span class="banner_caption d_block vc_child t_align_c w_sm_auto">
-      <span class="d_inline_middle">
-        <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">
-            Флористические услуги
-        </span>
-                            </span>
+                              <span class="d_inline_middle">
+                                <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">Флористические услуги</span>
+                              </span>
                             </span>
                         </a>
                     </div>
@@ -1014,11 +1008,9 @@
                         <a href="http://vidumki.ru/bannerclick/6" class="d_block banner wrapper r_corners relative m_xs_bottom_30">
                             <img src="<?php echo get_template_directory_uri(); ?>/img/banner4.jpg" alt="Баннер 4">
                             <span class="banner_caption d_block vc_child t_align_c w_sm_auto">
-      <span class="d_inline_middle">
-        <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">
-            Букеты с тюльпанами
-        </span>
-                            </span>
+                              <span class="d_inline_middle">
+                                <span class="d_block color_light tt_uppercase m_bottom_15 banner_title">Букеты с тюльпанами</span>
+                              </span>
                             </span>
                         </a>
                     </div>

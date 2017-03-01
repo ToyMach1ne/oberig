@@ -85,21 +85,19 @@
                                 <li class="m_bottom_10">
                                     <div class="clearfix m_bottom_15">
                                         <i class="fa fa-map-marker f_left"></i>
-                                        <p class="contact_e">127018 Москва,
-                                            <br>ул. Складочная, д.1 стр.1
-                                            <br>(Metro Cash&amp;Carry)</p>
+                                        <p class="contact_e"><?php the_field('adress', 36); ?></p>
                                     </div>
                                 </li>
                                 <li class="m_bottom_10">
                                     <div class="clearfix m_bottom_10">
                                         <i class="fa fa-phone f_left"></i>
-                                        <p class="contact_e"> +7&nbsp;(903)&nbsp;130-24-38</p>
+                                        <p class="contact_e"><?php the_field('phone', 36); ?></p>
                                     </div>
                                 </li>
                                 <li class="m_bottom_10">
                                     <div class="clearfix m_bottom_10">
                                         <i class="fa fa-envelope f_left"></i>
-                                        <a class="contact_e color_light" href="mailto:flowers@vidumki.ru">flowers@vidumki.ru</a>
+                                        <a class="contact_e color_light" href="mailto:flowers@vidumki.ru"><?php the_field('email', 36); ?></a>
                                     </div>
                                 </li>
                             </ul>
@@ -111,7 +109,7 @@
             <div class="footer_bottom_part">
                 <div class="container clearfix t_mxs_align_c">
                     <p class="f_left f_mxs_none m_mxs_bottom_10">
-                        © 2015 <span class="color_light">Интернет-магазин цветов и подарков Выдумки.</span>
+                        © 2015 <span class="color_light">Интернет-магазин цветов и подарков Обериг.</span>
                     </p>
                 </div>
             </div>

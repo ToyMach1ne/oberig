@@ -24,9 +24,9 @@
                         <div class="owl-wrapper-outer autoHeight" style="height: 110px;">
                             <div class="owl-wrapper" style="width: 246px; left: 0px; display: block;">
                                 <div class="owl-item" style="width: 123px;">
-                                    <a href="/assets/images/products/319/photo-2015-09-24-18-10-39-jpg.jpg" data-image="/assets/images/products/319/438x438/photo-2015-09-24-18-10-39-jpg.jpg" data-zoom-image="/assets/images/products/319/photo-2015-09-24-18-10-39-jpg.jpg">
-                                      <img src="<?php echo get_template_directory_uri(); ?>/img/photo-2015-09-24-18-10-39-jpg.jpg" alt="" title="photo_2015-09-24_18-10-39.jpg">
-                                    </a>
+                                      <?php if ( has_post_thumbnail()) : the_post_thumbnail('small'); else: ?>
+                                        <img itemprop="image" src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+                                      <?php endif; ?>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                     <tbody>
                         <tr>
                             <td>Артикул:</td>
-                            <td>0515</td>
+                            <td><?php the_field('article'); ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -58,7 +58,7 @@
                 <p class="m_bottom_10"></p>
                 <hr class="divider_type_3 m_bottom_15">
                 <div class="m_bottom_15">
-                    <span class="v_align_b f_size_big m_left_5 scheme_color fw_medium">4 600&nbsp;руб.</span>
+                    <span class="v_align_b f_size_big m_left_5 scheme_color fw_medium"><?php the_field('price'); ?>&nbsp;руб.</span>
                 </div>
                 <form class="form-horizontal ms2_form" method="post">
                     <input type="hidden" name="id" value="319">
@@ -93,17 +93,15 @@
             <!--tabs navigation-->
             <nav>
                 <ul class="tabs_nav horizontal_list clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-                    <li class="f_xs_none ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tab-1" aria-labelledby="ui-id-1" aria-selected="true"><a href="buketyi/bouquets-gerberi/buket-gerber«fioletovaya-pudra».html#tab-1" class="bg_light_color_1 color_dark tr_delay_hover r_corners d_block ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">Описание</a></li>
+                  <li class="f_xs_none ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tab-1" aria-labelledby="ui-id-1" aria-selected="true"><a href="#" role="presentation" tabindex="-1" id="ui-id-1">Описание</a></li>
                 </ul>
             </nav>
             <section class="tabs_content shadow r_corners">
                 <div id="tab-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false">
                     <p class="m_bottom_10"></p>
-                    <p>Гербера 8 шт.
-                        <br> Альстромерия 15 шт.
-                        <br> Роза 10 шт.
-                        <br> Гвоздика 13 шт.</p>
-                    <p></p>
+                    <?php if( have_rows('description') ): while ( have_rows('description') ) : the_row(); ?>
+                      <p><?php the_sub_field('desc_item'); ?></p>
+                     <?php endwhile; endif; ?>
                 </div>
             </section>
         </div>
@@ -113,23 +111,30 @@
         <div class="related_projects product_full_width m_bottom_15 owl-carousel owl-theme" style="display: block; opacity: 1;">
             <div class="owl-wrapper-outer autoHeight" style="height: 380px;">
                 <div class="owl-wrapper" style="width: 4560px; left: 0px; display: block;">
+               <?php query_posts("showposts=4"); if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <div class="owl-item" style="width: 285px;">
                         <figure class="r_corners photoframe shadow relative d_inline_b d_md_block d_xs_inline_b tr_all_hover">
                             <!--product preview-->
-                            <a href="buketyi/bouquets-gerberi/gerberyi-1.html" class="d_block relative pp_wrap">
+                            <a href="<?php the_permalink(); ?>" class="d_block relative pp_wrap">
                                 <!--hot or sale product-->
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/2-bouquet-pink-jpeg.jpg" class="tr_all_hover" alt="">
+                                <?php if ( has_post_thumbnail()) :?>
+                                  <?php the_post_thumbnail('thumbnail'); ?>
+                                <?php endif; ?><!-- /post thumbnail -->
                                 <span data-href="127" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Просмотр</span>
                             </a>
                             <!--description and price of product-->
                             <figcaption class="t_xs_align_l">
-                                <h5 class="m_bottom_10"><a href="buketyi/bouquets-gerberi/gerberyi-1.html" class="color_dark ellipsis" style="display: block; width: 235px; white-space: nowrap;">Букет из гербер «Новая волна»</a></h5>
+                                <h5 class="m_bottom_10">
+                                  <a href="<?php the_permalink(); ?>" class="color_dark ellipsis" style="display: block; width: 235px; white-space: nowrap;"><?php the_title(); ?></a>
+                                </h5>
                                 <div class="clearfix">
                                     <p class="scheme_color f_left fw_medium f_size_ex_large m_bottom_15">2 050 руб.</p>
                                 </div>
                             </figcaption>
                         </figure>
                     </div>
+                    <?php endwhile; endif; ?>
+                    <?php wp_reset_query(); ?>
                     <div class="owl-item" style="width: 285px;">
                         <figure class="r_corners photoframe shadow relative d_inline_b d_md_block d_xs_inline_b tr_all_hover">
                             <!--product preview-->
