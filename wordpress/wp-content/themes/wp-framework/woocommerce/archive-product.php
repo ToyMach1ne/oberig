@@ -21,7 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-
+<section class="breadcrumbs">
+    <div class="container">
+        <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
+    </div>
+</section>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -80,6 +84,13 @@ get_header( 'shop' ); ?>
 				 */
 				do_action( 'woocommerce_after_shop_loop' );
 			?>
+      <aside class="col-lg-3 col-md-3 col-sm-3 sidebar-right">
+                <!--widgets-->
+                 <?php if ( is_active_sidebar('widgetarea2') ) : ?>
+                    <?php dynamic_sidebar( 'widgetarea2' ); ?>
+                 <?php endif; ?>
+                <!--banner-->
+</aside>
 
 		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
@@ -94,15 +105,6 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
 		do_action( 'woocommerce_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
 	?>
 
 <?php get_footer( 'shop' ); ?>

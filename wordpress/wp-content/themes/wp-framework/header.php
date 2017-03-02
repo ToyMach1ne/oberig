@@ -39,7 +39,7 @@
                         <ul id="msMiniCart" class="d_inline_b horizontal_list clearfix t_align_l f_right f_xs_none site_settings">
                             <!--shopping cart-->
                             <li class="m_left_5 relative container3d" id="shopping_button">
-                                <a role="button" href="http://vidumki.ru/cart.html" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
+                                <a role="button" href="/cart.htm" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
                                     <span class="d_inline_middle shop_icon">
                                       <i class="fa fa-shopping-cart"></i>
                                       <span class="count tr_delay_hover type_2 circle t_align_c ms2_total_count">0</span>
