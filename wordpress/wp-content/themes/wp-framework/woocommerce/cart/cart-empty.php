@@ -25,7 +25,7 @@ wc_print_notices();
 ?>
 
 <p class="cart-empty">
-	<?php _e( 'Your cart is currently empty.', 'woocommerce' ) ?>
+	<?php _e( 'Ваша корзина пуста', 'woocommerce' ) ?>
 </p>
 
 <?php do_action( 'woocommerce_cart_is_empty' ); ?>
@@ -33,7 +33,7 @@ wc_print_notices();
 <?php if ( wc_get_page_id( 'shop' ) > 0 ) : ?>
 	<p class="return-to-shop">
 		<a class="button wc-backward" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
-			<?php _e( 'Return To Shop', 'woocommerce' ) ?>
+			<?php _e( '<i class="fa fa-reply m_left_5 m_right_10 f_size_large"></i>Вернутся к магазину', 'woocommerce' ) ?>
 		</a>
 	</p>
 <?php endif; ?>

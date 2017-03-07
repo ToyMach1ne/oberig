@@ -30,5 +30,4 @@ global $product;
 	<meta itemprop="price" content="<?php echo esc_attr( $product->get_display_price() ); ?>" />
 	<meta itemprop="priceCurrency" content="<?php echo esc_attr( get_woocommerce_currency() ); ?>" />
 	<link itemprop="availability" href="http://schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" />
-  <p class="m_bottom_10"><strong>Быстро доставляем по Москве. Возможен самовывоз. Все подробности у оператора</strong></p>
 </div>
