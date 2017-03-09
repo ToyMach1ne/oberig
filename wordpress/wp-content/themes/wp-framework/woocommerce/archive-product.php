@@ -51,52 +51,72 @@ get_header( 'shop' ); ?>
 			 */
 			do_action( 'woocommerce_archive_description' );
 		?>
+    <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large">
+                    <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr animate_horizontal_finished">
+                        <button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="*">Все</button>
+                    </li>
+                    <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr animate_horizontal_finished">
+                        <button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".new">Новинки</button>
+                    </li>
+                    <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr animate_horizontal_finished">
+                        <button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".specials">Скидки</button>
+                    </li>
+                    <li class="m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr animate_horizontal_finished">
+                        <button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".hit">Хит продаж</button>
+                    </li>
+                </ul>
+<div class="archive-wrapper">
+  <section class="products_container clearfix m_bottom_25 m_sm_bottom_15 isotope col-lg-9 col-md-9 col-sm-9">
+    <?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+      <?php
+        /**
+         * woocommerce_before_shop_loop hook.
+         *
+         * @hooked woocommerce_result_count - 20
+         * @hooked woocommerce_catalog_ordering - 30
+         */
+        do_action( 'woocommerce_before_shop_loop' );
+      ?>
 
-			<?php
-				/**
-				 * woocommerce_before_shop_loop hook.
-				 *
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
-			?>
+      <?php woocommerce_product_loop_start(); ?>
 
-			<?php woocommerce_product_loop_start(); ?>
+        <?php woocommerce_product_subcategories(); ?>
 
-				<?php woocommerce_product_subcategories(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+          <?php wc_get_template_part( 'content', 'product' ); ?>
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+        <?php endwhile; // end of the loop. ?>
 
-				<?php endwhile; // end of the loop. ?>
+      <?php woocommerce_product_loop_end(); ?>
 
-			<?php woocommerce_product_loop_end(); ?>
+      <?php
+        /**
+         * woocommerce_after_shop_loop hook.
+         *
+         * @hooked woocommerce_pagination - 10
+         */
+        do_action( 'woocommerce_after_shop_loop' );
+      ?>
 
-			<?php
-				/**
-				 * woocommerce_after_shop_loop hook.
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			?>
-      <aside class="col-lg-3 col-md-3 col-sm-3 sidebar-right">
+
+    <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+
+      <?php wc_get_template( 'loop/no-products-found.php' ); ?>
+
+    <?php endif; ?>
+</section>
+
+<aside class="col-lg-3 col-md-3 col-sm-3 sidebar-right">
                 <!--widgets-->
                  <?php if ( is_active_sidebar('widgetarea2') ) : ?>
                     <?php dynamic_sidebar( 'widgetarea2' ); ?>
                  <?php endif; ?>
                 <!--banner-->
 </aside>
+</div>
 
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
-
-		<?php endif; ?>
 
 	<?php
 		/**

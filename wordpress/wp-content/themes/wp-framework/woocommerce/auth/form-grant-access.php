@@ -40,8 +40,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div>
 
 <p class="wc-auth-actions">
-	<a href="<?php echo esc_url( $granted_url ); ?>" class="button button-primary wc-auth-approve"><?php _e( 'Approve', 'woocommerce' ); ?></a>
-	<a href="<?php echo esc_url( $return_url ); ?>" class="button wc-auth-deny"><?php _e( 'Deny', 'woocommerce' ); ?></a>
+	<a href="<?php echo esc_url( $granted_url ); ?>" class="button button-primary wc-auth-approve"><?php _e( 'Подтвердить', 'woocommerce' ); ?></a>
+	<a href="<?php echo esc_url( $return_url ); ?>" class="button wc-auth-deny"><?php _e( 'Отказать', 'woocommerce' ); ?></a>
 </p>
 
 <?php do_action( 'woocommerce_auth_page_footer' ); ?>

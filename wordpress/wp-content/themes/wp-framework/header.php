@@ -42,7 +42,7 @@
                                 <a role="button" href="/cart.htm" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
                                     <span class="d_inline_middle shop_icon">
                                       <i class="fa fa-shopping-cart"></i>
-                                      <span class="count tr_delay_hover type_2 circle t_align_c ms2_total_count">0</span>
+                                      <span id="clicks" class="count tr_delay_hover type_2 circle t_align_c ms2_total_count">0</span>
                                     </span>
                                     <b><span class="ms2_total_cost">0</span>&nbsp;руб.</b>
                                 </a>

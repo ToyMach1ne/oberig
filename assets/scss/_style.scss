@@ -4637,7 +4637,122 @@ fieldset legend {
   16.1 Inline styles
 
 ------------------------------------- */
+
+
+      .products_container {
+        .woocommerce-result-count {
+          display: none;
+        }
+        .product_item  {
+          padding: 0;
+          figure {
+            a {
+              img {
+                    max-width: 242px;
+                  max-height: 242px;
+              }
+              h3 {
+                color: #292f38;
+                text-align: center;
+                font-size: 16px;
+                padding-top: 15px;
+                margin-bottom: 15px;
+                &:hover {
+                  color: #e74c3c;
+                }
+              }
+              .price {
+                display: block;
+                margin-bottom: 15px;
+                color: #e74c3c;
+                font-weight: 500;
+                font-size: 1.25em;
+              }
+            }
+            .button {
+              line-height: 1.4;
+            min-width: 140px;
+            height: 35px;
+            text-align: center;
+            color: #fff;
+            background-color: #e74c3c;
+            box-shadow: 0 2px 0 #c0392b;
+            &:hover {
+              color: #fff;
+              background: #34495e;
+              box-shadow: 0 2px 0 #34495e;
+            }
+            }
+          }
+        }
+      }
+
 .home {
+  .breadcrumbs {
+    display: none;
+  }
+  .horizontal_list {
+                display: block !important;
+              }
+  #container {
+        min-height: 0!important;
+    #content {
+      .page-title {
+        display: none;
+      }
+      .products_container {
+        .woocommerce-result-count {
+          display: none;
+        }
+        .product_item  {
+          padding: 0;
+          figure {
+            a {
+              img {
+                    max-width: 242px;
+                  max-height: 242px;
+                  width: 100%;
+              }
+              h3 {
+                color: #292f38;
+                text-align: center;
+                font-size: 16px;
+                padding-top: 15px;
+                margin-bottom: 15px;
+                &:hover {
+                  color: #e74c3c;
+                }
+              }
+              .price {
+                display: block;
+                margin-bottom: 15px;
+                color: #e74c3c;
+                font-weight: 500;
+                font-size: 1.25em;
+              }
+            }
+            .button {
+              line-height: 1.4;
+            min-width: 160px;
+            height: 35px;
+            text-align: center;
+            color: #fff;
+            background-color: #e74c3c;
+            box-shadow: 0 2px 0 #c0392b;
+            &:hover {
+              color: #fff;
+              background: #34495e;
+              box-shadow: 0 2px 0 #34495e;
+            }
+            }
+          }
+        }
+      }
+    }
+    aside, .woocommerce-pagination {
+      display: none;
+    }
+  }
   .revolution_slider {
     overflow: visible;
     .r_slider {
@@ -4834,6 +4949,7 @@ fieldset legend {
       position: absolute;
       top: 0;
       left: 0;
+      max-width:262px;
       &:first-child {
         transform: translate3d(0px, 0px, 0px);
       }
@@ -5156,7 +5272,7 @@ fieldset legend {
           .button {
             line-height: 1.4;
 
-            width: 110px;
+            min-width: 160px;
             height: 35px;
 
             text-align: center;
@@ -5172,7 +5288,8 @@ fieldset legend {
           }
         }
       }
-      .posted_in {
+    }
+    .posted_in {
         display: block;
 
         width: 260px;
@@ -5188,7 +5305,7 @@ fieldset legend {
           color: #000;
         }
         &:hover {
-          color: #fff;
+          color: #fff !important;
           background: #34495e;
           box-shadow: 0 2px 0 #34495e;
           a {
@@ -5196,7 +5313,6 @@ fieldset legend {
           }
         }
       }
-    }
   }
 }
 
@@ -5204,10 +5320,24 @@ fieldset legend {
       .wide_layout {
     #container {
         padding: 60px 0;
-        min-height: 1500px;
+        min-height: 2800px;
         #content {
               min-height: 1000px;
               height: auto;
+              .products_container {
+                .product_item {
+                  figure {
+                    a {
+                      img{
+                  width: 100%;
+                      }
+                    }
+                  }
+                }
+              }
+              .horizontal_list {
+                display: none;
+              }
               .woocommerce-pagination {
                 .page-numbers {
                   border:none;
@@ -5249,7 +5379,7 @@ fieldset legend {
           .products {
                 float: left;
                 width: 75%;
-        li {
+        .product_item {
           padding-bottom: 10px;
           width: 29%;
           text-align: center;
@@ -5287,7 +5417,7 @@ fieldset legend {
           }
           .button {
             line-height: 1.4;
-            width: 110px;
+            min-width: 140px;
             height: 35px;
             text-align: center;
             color: #fff;
@@ -5329,7 +5459,7 @@ fieldset legend {
                 button {
                   margin-left: 30%;
                   line-height: 1.4;
-                  width: 110px;
+                  min-width: 140px;
                   height: 35px;
                   text-align: center;
                   color: #fff;
@@ -5646,6 +5776,55 @@ fieldset legend {
     }
   }
 }
+
+.single {
+.related {
+      min-height: 500px;
+  .product_item  {
+          padding: 0;
+          figure {
+            a {
+              img {
+                    max-width: 242px;
+                  max-height: 242px;
+              }
+              h3 {
+                color: #292f38;
+                text-align: center;
+                font-size: 16px;
+                padding-top: 15px;
+                margin-bottom: 15px;
+                &:hover {
+                  color: #e74c3c;
+                }
+              }
+              .price {
+                display: block;
+                margin-bottom: 15px;
+                color: #e74c3c;
+                font-weight: 500;
+                font-size: 1.25em;
+              }
+            }
+            .button {
+              line-height: 1.4;
+            min-width: 140px;
+            height: 35px;
+            text-align: center;
+            color: #fff;
+            background-color: #e74c3c;
+            box-shadow: 0 2px 0 #c0392b;
+            &:hover {
+              color: #fff;
+              background: #34495e;
+              box-shadow: 0 2px 0 #34495e;
+            }
+            }
+          }
+        }
+}
+}
+
 
 
 @media (min-width: 1200px) {

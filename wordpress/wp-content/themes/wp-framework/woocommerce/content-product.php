@@ -27,7 +27,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php post_class(); ?>>
+<div class="product_item isotope-item col-md-3">
+<figure class="r_corners photoframe shadow relative animate_ftb t_align_c long animate_vertical_finished">
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.
@@ -67,4 +68,5 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	 */
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
-</li>
+  </figure>
+  </div>

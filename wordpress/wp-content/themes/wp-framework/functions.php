@@ -656,8 +656,70 @@ function disable_emojicons_tinymce( $plugins ) {
 add_theme_support( 'woocommerce' );
 
 
+/**
+* WooCommerce Extra Feature
+* --------------------------
+*
+* Change number of related products on product page
+* Set your own value for 'posts_per_page'
+*
+*/// Redefine wooCommerce related products
+
+function woocommerce_output_related_products() {
+woocommerce_related_products(3,1); // Display 3 products in rows of 3
+}
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_upsells', 15 );
+
+    if ( ! function_exists( 'woocommerce_output_upsells' ) ) {
+        function woocommerce_output_upsells() {
+        woocommerce_upsell_display( 3,1 ); // Display 3 products in 1 row
+    }
+}
+/** Change number of upsells in single prodict posts
+*  Set the first number to how many total and the second number to how many rows.
+*/
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_upsells', 15 );
+
+    if ( ! function_exists( 'woocommerce_output_upsells' ) ) {
+        function woocommerce_output_upsells() {
+        woocommerce_upsell_display( 3,1 ); // Display 3 products in 1 row
+    }
+}
+
+
+// ADD UKRANIAN MONEY
+add_filter( 'woocommerce_currencies', 'add_my_currency' );
+function add_my_currency( $currencies ) {
+  $currencies['ABC'] = __( 'Українська гривня', 'woocommerce' );
+  return $currencies;
+}
+add_filter('woocommerce_currency_symbol', 'add_my_currency_symbol', 10, 2);
+function add_my_currency_symbol( $currency_symbol, $currency ) {
+  switch( $currency ) {
+      case 'ABC': $currency_symbol = 'грн'; break;
+    }
+  return $currency_symbol;
+}
 
 
 
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
+
+function woo_custom_cart_button_text() {
+
+        return __( 'Добавить в корзину', 'woocommerce' );
+
+}
+
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
+
+function woo_archive_custom_cart_button_text() {
+
+        return __( 'Добавить в корзину', 'woocommerce' );
+
+}
 
 ?>
