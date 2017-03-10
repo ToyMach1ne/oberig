@@ -1317,12 +1317,65 @@ blockquote,
 
 ------------------------------------- */
 
-.revolution_slider {
+#owl-demo {
   position: relative;
+      transform: translateX(0px);
+    opacity: 1;
+    &:hover {
+      .owl-controls {
+        .owl-buttons {
+          .owl-prev {
+opacity:1;
+transform: translatex(40px);
 
-  width: 100%;
-  padding: 0;
 }
+.owl-next {
+opacity:1;
+transform: translatex(-40px);
+}
+        }
+      }
+    }
+  .item {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 288px;
+    }
+  }
+  .owl-controls {
+    .owl-buttons {
+.owl-prev, .owl-next {
+    background-color: rgba(41,47,56,.5);
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 2;
+    opacity:0;
+    transition:.3s all ease-out;
+    font-size: 30px;
+    &:hover {
+    background-color: #d55a4e;
+    }
+}
+.owl-prev {
+position: absolute;
+top: 40%;
+
+}
+.owl-next {
+  position: absolute;
+  top: 40%;
+  right:0;
+}
+    }
+  }
+}
+
+
 
 .tp-leftarrow i[class^='fa '],
 .tp-rightarrow i[class^='fa '],
@@ -4688,6 +4741,7 @@ fieldset legend {
       }
 
 .home {
+
   .breadcrumbs {
     display: none;
   }
@@ -4755,6 +4809,7 @@ fieldset legend {
   }
   .revolution_slider {
     overflow: visible;
+    display: none;
     .r_slider {
       height: 288px;
       ul {
@@ -5317,6 +5372,9 @@ fieldset legend {
 }
 
 .archive {
+  #owl-demo {
+  display: none !important;
+}
       .wide_layout {
     #container {
         padding: 60px 0;
@@ -5825,6 +5883,11 @@ fieldset legend {
 }
 }
 
+.home {
+    #owl-demo {
+  display: block !important;
+}
+}
 
 
 @media (min-width: 1200px) {

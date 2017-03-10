@@ -21,6 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
+<div id="owl-demo" class="owl-carousel owl-theme">
+
+  <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/4236x2800-300dpi-krasivyj-buket-foto.jpg" alt=""></div>
+  <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/997867.jpg" data-src="/img/997867.jpg" alt="GTA V"></div>
+
+</div>
 <section class="breadcrumbs">
     <div class="container">
         <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
@@ -51,6 +57,7 @@ get_header( 'shop' ); ?>
 			 */
 			do_action( 'woocommerce_archive_description' );
 		?>
+
     <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large">
                     <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr animate_horizontal_finished">
                         <button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="*">Все</button>
