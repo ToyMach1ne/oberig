@@ -22,10 +22,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 <div id="owl-demo" class="owl-carousel owl-theme">
-
-  <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/4236x2800-300dpi-krasivyj-buket-foto.jpg" alt=""></div>
-  <div class="item"><img src="<?php echo get_template_directory_uri(); ?>/img/997867.jpg" data-src="/img/997867.jpg" alt="GTA V"></div>
-
+  <?php if( have_rows('slider', 30) ): ?>
+    <?php while( have_rows('slider', 30) ): the_row();
+      // vars
+      $image = get_sub_field('slider_img'); ?>
+    <div class="item">
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+      <h6 id="slider-title" class="slider-text"><?php the_sub_field('slider_text'); ?></h6>
+      <a id="slider-click" class="slider-button">Смотреть</a>
+    </div>
+    <?php endwhile; endif; ?>
 </div>
 <section class="breadcrumbs">
     <div class="container">

@@ -30,54 +30,67 @@
                 <div class="container">
                     <div class="row clearfix">
                         <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_30">
-                            <h3 class="color_light_2 m_bottom_20">Информация</h3>
-                            <ul class="vertical_list">
-                                <li><a class="color_light tr_delay_hover" href="http://vidumki.ru/dostavka.html">Доставка цветов<i class="fa fa-angle-right"></i></a></li>
-                                <li><a class="color_light tr_delay_hover" href="http://vidumki.ru/contacts.html">Контакты<i class="fa fa-angle-right"></i></a></li>
-                            </ul>
+                            <aside class="col-lg-3 col-md-3 col-sm-3 sidebar-right">
+                              <!--widgets-->
+                               <?php if ( is_active_sidebar('widgetarea2') ) : ?>
+                                  <?php dynamic_sidebar( 'widgetarea2' ); ?>
+                               <?php endif; ?>
+                              <!--banner-->
+                            </aside>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_30">
                             <h3 class="color_light_2 m_bottom_20">Распродажа</h3>
-                            <article class="m_bottom_10 clearfix">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/12-jpg(1).jpg" alt="Букет красных роз Блеск чувств в интернет-магазине цветов Vidumki.ru" class="f_left m_right_15">
-                                <a href="http://vidumki.ru/buketyi/bukety-s-rozami/blesk-chuvstv.html" class="color_light d_inline_b d_md_block m_bottom_10">Букет красных роз «Блеск чувств»</a>
-                                <p class="scheme_color">
-                                    <s>2 900</s> 2 650 руб.</p>
-                            </article>
-                            <hr class="divider_type_4 m_bottom_10">
-                            <article class="m_bottom_10 clearfix">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/15-jpg.jpg" alt="Букет Розовое шампанское (розы, лилии) в интернет-магазине Vidumki.ru" class="f_left m_right_15">
-                                <a href="http://vidumki.ru/buketyi/bukety-s-rozami/rozovoe-shampanskoe.html" class="color_light d_inline_b d_md_block m_bottom_10">Букет с розами<br>«Розовое шампанское»</a>
-                                <p class="scheme_color">
-                                    <s>3 100</s> 2 900 руб.</p>
-                            </article>
-                            <hr class="divider_type_4 m_bottom_10">
-                            <article class="m_bottom_10 clearfix">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/4-jpg.jpg" alt="Букет Страна Оз (герберы) в интернет-магазине цветов Vidumki.ru" class="f_left m_right_15">
-                                <a href="http://vidumki.ru/buketyi/bouquets-gerberi/strana-oz.html" class="color_light d_inline_b d_md_block m_bottom_10">Букет из гербер «Страна Оз»</a>
-                                <p class="scheme_color">
-                                    <s>2 500</s> 2 200 руб.</p>
-                            </article>
+                            <!-- SALE PRODUCTS -->
+                            <?php
+                                $args = array(
+                                    'post_type'      => 'product',
+                                    'posts_per_page' => 3,
+                                    'meta_query'     => array(
+                                            'relation' => 'OR',
+                                            array( // Simple products type
+                                                'key'           => '_sale_price',
+                                                'value'         => 0,
+                                                'compare'       => '>',
+                                                'type'          => 'numeric'
+                                            ),
+                                            array( // Variable products type
+                                                'key'           => '_min_variation_sale_price',
+                                                'value'         => 0,
+                                                'compare'       => '>',
+                                                'type'          => 'numeric'
+                                            )
+                                        )
+                                );
+                                $loop = new WP_Query( $args );
+                                if ( $loop->have_posts() ) {
+                                    while ( $loop->have_posts() ) : $loop->the_post();
+                                        woocommerce_get_template_part( 'content', 'product' );
+                                    endwhile;
+                                } else {
+                                    echo __( 'No products found' );
+                                }
+                                wp_reset_postdata();
+                            ?>
+                            <!--END of SALE PRODUCTS -->
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_30">
                             <h3 class="color_light_2 m_bottom_20">Новые букеты</h3>
-                            <article class="m_bottom_10 clearfix">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/photo-2015-09-30-13-12-26-jpg.jpg" alt="Букет с хризантемами «Голиаф» в интернет-магазине цветов Vidumki.ru" class="f_left m_right_15">
-                                <a href="http://vidumki.ru/buketyi/bouquets-chrizantemi/buket-s-xrizantemami%C2%ABgoliaf%C2%BB.html" class="color_light d_inline_b d_md_block m_bottom_10">Букет с хризантемами<br>«Голиаф»</a>
-                                <p class="scheme_color">6 900 руб.</p>
-                            </article>
-                            <hr class="divider_type_4 m_bottom_10">
-                            <article class="m_bottom_10 clearfix">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/photo-2015-10-01-20-58-46-jpg(1).jpg" alt="Коробочка с цветами «Ниагарский водопад» — купить коробочку с цветами «Ниагарский водопад» в интернет-магазине  Vidumki.ru" class="f_left m_right_15">
-                                <a href="http://vidumki.ru/buketyi/korobochki-s-czvetami/korobochka-s-czvetami%C2%ABniagarskij-vodopad-%C2%BB.html" class="color_light d_inline_b d_md_block m_bottom_10">Коробочка с цветами<br>«Ниагарский водопад»</a>
-                                <p class="scheme_color">3 000 руб.</p>
-                            </article>
-                            <hr class="divider_type_4 m_bottom_10">
-                            <article class="m_bottom_10 clearfix">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/photo-2015-10-01-13-40-33-jpg.jpg" alt="Букет гербер «Палящее солнце пустыни» в интернет-магазине цветов Vidumki.ru" class="f_left m_right_15">
-                                <a href="http://vidumki.ru/buketyi/bouquets-gerberi/buket-gerber%C2%ABpalyashhee-solncze-pustyini%C2%BB.html" class="color_light d_inline_b d_md_block m_bottom_10">Букет гербер<br>«Палящее солнце пустыни»</a>
-                                <p class="scheme_color">3 200 руб.</p>
-                            </article>
+                            <!-- NEW PRODUCTS -->
+                      <?php $args = array( 'post_type' => 'product', 'stock' => 1, 'posts_per_page' => 3, 'orderby' =>'date','order' => 'DESC' );
+                       $loop = new WP_Query( $args ); while ( $loop->have_posts() ) : $loop->the_post(); global $product; ?>
+                                 <div class="product_item">
+                                  <figure>
+                                     <a id="id-<?php the_id(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                      <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="65px" height="115px" />'; ?>
+                                      <h3><?php the_title(); ?></h3>
+                                      <span class="price"><?php echo $product->get_price_html(); ?></span>
+                                    </a>
+                                    <?php woocommerce_template_loop_add_to_cart( $loop->post, $product ); ?>
+                                  </figure>
+                                </div><!-- product_item -->
+                          <?php endwhile; ?>
+                          <?php wp_reset_query(); ?>
+                          <!--END of NEW PRODUCTS -->
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_30">
                             <h3 class="color_light_2 m_bottom_20">Контакты</h3>
@@ -163,21 +176,19 @@
                     <li class="m_bottom_10">
                         <div class="clearfix m_bottom_15">
                             <i class="fa fa-map-marker f_left"></i>
-                            <p class="contact_e">127018 Москва,
-                                <br>ул. Складочная, д.1 стр.1
-                                <br>(Metro Cash&amp;Carry)</p>
+                            <p class="contact_e"><?php the_field('adress', 36); ?></p>
                         </div>
                     </li>
                     <li class="m_bottom_10">
                         <div class="clearfix m_bottom_10">
                             <i class="fa fa-phone f_left"></i>
-                            <p class="contact_e"> +7&nbsp;(903)&nbsp;130-24-38</p>
+                            <p class="contact_e"><?php the_field('phone', 36); ?></p>
                         </div>
                     </li>
                     <li class="m_bottom_10">
                         <div class="clearfix m_bottom_10">
                             <i class="fa fa-envelope f_left"></i>
-                            <a class="contact_e default_t_color" href="mailto:flowers@vidumki.ru">flowers@vidumki.ru</a>
+                            <a class="contact_e default_t_color" href="mailto:flowers@vidumki.ru"><?php the_field('email', 36); ?></a>
                         </div>
                     </li>
                 </ul>
@@ -213,7 +224,6 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/default.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.jgrowl.min.js"></script>
     <div class="scrollwidth"></div>
-
 </body>
 
 </html>
