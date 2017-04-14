@@ -1,14 +1,14 @@
 <?php get_header(); ?>
-<section class="breadcrumbs">
+  <section class="breadcrumbs">
     <div class="container">
-        <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
+      <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
     </div>
-</section>
+  </section>
 <div class="page_content_offset">
     <div class="container">
         <div class="clearfix m_bottom_30 t_xs_align_c">
             <div class="photoframe type_2 shadow r_corners f_left f_sm_none d_xs_inline_b product_single_preview relative m_right_30 m_bottom_5 m_sm_bottom_20 m_xs_right_0 w_mxs_full">
-                <!--span class="hot_stripe"><img src="/assets/template/images/sale_product.png" alt=""></span-->
+
                 <div class="relative d_inline_b m_bottom_10 qv_preview d_xs_block">
                     <?php if ( has_post_thumbnail()) : the_post_thumbnail('medium'); else: ?>
                   <img itemprop="image" src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />

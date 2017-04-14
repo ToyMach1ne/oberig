@@ -1,5 +1,6 @@
 <?php /* Template Name: Home */ get_header(); ?>
         <!--slider-->
+
         <section class="revolution_slider">
             <div class="r_slider revslider-initialised tp-simpleresponsive" id="revslider-602">
                 <ul>
@@ -43,6 +44,7 @@
             <div class="tp-leftarrow tparrows default"><i class="fa fa-angle-left"></i></div>
             <div class="tp-rightarrow tparrows default"><i class="fa fa-angle-right"></i></div>
         </section>
+
         <!--content-->
         <div class="page_content_offset">
             <div class="container">
