@@ -40,16 +40,15 @@
                             <!--shopping cart-->
                             <li class="m_left_5 relative container3d" id="shopping_button">
                                 <?php global $woocommerce; ?>
- <a class="your-class-name" href="<?php echo $woocommerce->cart->get_cart_url(); ?>"
-title="<?php _e('Корзина', 'woothemes'); ?>">
-<i class="fa fa-shopping-cart">
-  <span class="items-count">
-    <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'),
-     $woocommerce->cart->cart_contents_count);?>
-  </span>
-</i>
-<?php echo $woocommerce->cart->get_cart_total(); ?>
-</a>
+                                  <a class="your-class-name" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('Корзина', 'woothemes'); ?>">
+                                    <i class="fa fa-shopping-cart">
+                                      <span class="items-count">
+                                        <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'),
+                                         $woocommerce->cart->cart_contents_count);?>
+                                      </span>
+                                    </i>
+                                    <?php echo $woocommerce->cart->get_cart_total(); ?>
+                                  </a>
                             </li>
                         </ul>
                     </div>
