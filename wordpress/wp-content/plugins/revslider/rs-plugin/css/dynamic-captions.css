@@ -1,0 +1,136 @@
+.tp-caption.modern_medium_light2 {
+font-size:64px;
+line-height:66px;
+font-weight:300;
+font-family:"Open Sans", sans-serif;
+color:rgb(255, 255, 255);
+text-decoration:none;
+background-color:transparent;
+text-shadow:none;
+margin:0px;
+white-space:nowrap;
+border-width:0px;
+border-color:rgb(0, 0, 0);
+border-style:none;
+}
+
+.tp-caption.modern_medium_light {
+position:absolute;
+color:#000;
+text-shadow:none;
+font-weight:300;
+font-size:64px;
+line-height:66px;
+font-family:"Open Sans", sans-serif;
+margin:0px;
+border-width:0px;
+border-style:none;
+white-space:nowrap;
+}
+
+.tp-caption.modern_large_light_dark {
+position:absolute;
+color:#000;
+text-shadow:none;
+font-weight:300;
+font-size:64px;
+line-height:66px;
+font-family:"Open Sans", sans-serif;
+margin:0px;
+border-width:0px;
+border-style:none;
+white-space:nowrap;
+}
+
+.tp-caption.small_text {
+position:absolute;
+color:#fff;
+text-shadow:0px 2px 5px rgba(0, 0, 0, 0.5);
+font-weight:700;
+font-size:14px;
+line-height:20px;
+font-family:Arial;
+margin:0px;
+border-width:0px;
+border-style:none;
+white-space:nowrap;
+}
+
+.tp-caption.modern_medium_light-3aT {
+font-size:39px;
+line-height:47px;
+font-weight:300;
+font-family:"Open Sans", sans-serif;
+color:rgb(0, 0, 0);
+text-decoration:none;
+text-shadow:none;
+margin:0px;
+white-space:nowrap;
+background-color:transparent;
+border-width:0px;
+border-color:rgb(0, 0, 0);
+border-style:none;
+}
+
+.tp-caption.modern_medium_light-3a {
+font-size:39px;
+line-height:66px;
+font-weight:300;
+font-family:"Open Sans", sans-serif;
+color:rgb(0, 0, 0);
+text-decoration:none;
+text-shadow:none;
+margin:0px;
+white-space:nowrap;
+background-color:transparent;
+border-width:0px;
+border-color:rgb(0, 0, 0);
+border-style:none;
+}
+
+.tp-caption.modern_small_text_dark-bl {
+font-size:17px;
+line-height:22px;
+font-family:Arial;
+color:rgb(0, 0, 0);
+text-decoration:none;
+text-shadow:none;
+margin:0px;
+white-space:nowrap;
+background-color:transparent;
+border-width:0px;
+border-color:rgb(85, 85, 85);
+border-style:none;
+}
+
+.tp-caption.modern_medium_light-3 {
+font-size:40px;
+line-height:66px;
+font-weight:300;
+font-family:"Open Sans", sans-serif;
+color:rgb(255, 255, 255);
+text-decoration:none;
+text-shadow:none;
+margin:0px;
+white-space:nowrap;
+background-color:transparent;
+border-width:0px;
+border-color:rgb(0, 0, 0);
+border-style:none;
+}
+
+.tp-caption.modern_small_text_dark-wh {
+font-size:17px;
+line-height:22px;
+font-family:Arial;
+color:rgb(255, 255, 255);
+text-decoration:none;
+text-shadow:none;
+margin:0px;
+white-space:nowrap;
+background-color:transparent;
+border-width:0px;
+border-color:rgb(85, 85, 85);
+border-style:none;
+}
+

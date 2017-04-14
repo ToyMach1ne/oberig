@@ -883,10 +883,6 @@ if (typeof jQuery === 'undefined') {
       var tabs = $('.tabs');
       if (tabs.length) {
         tabs.tabs({
-          /*beforeActivate: function(event, ui) {
-                var hash = ui.newTab.children("li a").attr("href");
-                window.location.hash = hash;
-            },*/
           hide: {
             effect: "fadeOut",
             duration: 450
@@ -931,8 +927,6 @@ if (typeof jQuery === 'undefined') {
       })
 
     })();
-
-
 
     // block select
 
@@ -1127,8 +1121,6 @@ if (typeof jQuery === 'undefined') {
 
   });
 
-
-
   $(window).load(function() {
 
     function randomSort(selector, items) {
@@ -1150,8 +1142,6 @@ if (typeof jQuery === 'undefined') {
     }
 
     // isotope
-
-
     (function() {
 
       if ($('.products_container').length) {
@@ -1344,14 +1334,7 @@ $(document).ready(function() {
     loop: true,
     autoplay: true,
     autoplayTimeout: 4500,
-    // "singleItem:true" is a shortcut for:
     items: 1,
-    // itemsDesktop : false,
-    // itemsDesktopSmall : false,
-    // itemsTablet: false,
-    // itemsMobile : false
-
-    // Listen to owl events:
 
   })
 
