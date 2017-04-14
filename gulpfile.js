@@ -1,7 +1,7 @@
 /* if work with html set TRUE, else - FALSE */
 var htmlOWp = false,
   // set wordpress template folder
-  wpThemeName = 'wp-framework',
+  wpThemeName = 'wp-oberig',
   // and set wordpress domain
   wpDomain = 'oberig.dev';
 
