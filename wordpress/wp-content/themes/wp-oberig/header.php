@@ -35,7 +35,7 @@
               <div class="col-lg-8 col-md-7 col-sm-8 clearfix t_xs_align_c">
                   <div class="relative f_left">
                     <a href="<?php echo home_url(); ?>" class="logo m_xs_bottom_10 d_inline_b">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/vidumki_kr+.png" width="350" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
+                      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" width="350" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
                     </a>
                   </div><!-- relative f_left -->
                   <ul id="msMiniCart" class="d_inline_b horizontal_list clearfix t_align_l f_right f_xs_none site_settings">
