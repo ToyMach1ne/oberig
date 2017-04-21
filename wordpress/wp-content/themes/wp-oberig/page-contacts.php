@@ -34,7 +34,7 @@
                         <li class="m_bottom_10">
                             <div class="clearfix m_bottom_10">
                                 <i class="fa fa-envelope f_left"></i>
-                                <a class="contact_e default_t_color" href="mailto:flowers@vidumki.ru"><?php the_field('email'); ?></a>
+                                <a class="contact_e default_t_color" href="mailto:pvl_oberig@mail.ru"><?php the_field('email'); ?></a>
                             </div>
                         </li>
                     </ul>

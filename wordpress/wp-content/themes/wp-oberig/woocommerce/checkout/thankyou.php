@@ -39,20 +39,20 @@ if ( $order ) : ?>
 
 		<ul class="woocommerce-thankyou-order-details order_details">
 			<li class="order">
-				<?php _e( 'Order Number:', 'woocommerce' ); ?>
+				<?php _e( 'Номер Заказа:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_order_number(); ?></strong>
 			</li>
 			<li class="date">
-				<?php _e( 'Date:', 'woocommerce' ); ?>
+				<?php _e( 'Дата:', 'woocommerce' ); ?>
 				<strong><?php echo date_i18n( get_option( 'date_format' ), strtotime( $order->order_date ) ); ?></strong>
 			</li>
 			<li class="total">
-				<?php _e( 'Total:', 'woocommerce' ); ?>
+				<?php _e( 'Всего:', 'woocommerce' ); ?>
 				<strong><?php echo $order->get_formatted_order_total(); ?></strong>
 			</li>
 			<?php if ( $order->payment_method_title ) : ?>
 			<li class="method">
-				<?php _e( 'Payment Method:', 'woocommerce' ); ?>
+				<?php _e( 'Метод оплаты:', 'woocommerce' ); ?>
 				<strong><?php echo $order->payment_method_title; ?></strong>
 			</li>
 			<?php endif; ?>

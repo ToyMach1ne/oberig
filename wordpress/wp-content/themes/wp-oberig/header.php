@@ -40,8 +40,8 @@
                   </div><!-- relative f_left -->
                   <ul id="msMiniCart" class="d_inline_b horizontal_list clearfix t_align_l f_right f_xs_none site_settings">
                     <li class="m_left_5 relative container3d" id="shopping_button">
-                      <?php global $woocommerce; ?>
-                        <a class="your-class-name" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('Корзина', 'woothemes'); ?>">
+                        <?php global $woocommerce; ?>
+                        <a class="your-class-name" href="/cart.htm" title="<?php _e('Корзина', 'woothemes'); ?>">
                           <i class="fa fa-shopping-cart">
                             <span class="items-count">
                               <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>

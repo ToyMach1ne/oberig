@@ -1,6 +1,5 @@
 <?php /* Template Name: Home */ get_header(); ?>
         <!--slider-->
-
         <section class="revolution_slider">
             <div class="r_slider revslider-initialised tp-simpleresponsive" id="revslider-602">
                 <ul>

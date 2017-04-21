@@ -193,6 +193,17 @@ if (function_exists('register_sidebar')) {
     'after_title' => '</h6>'
   ));
 
+  //  Define Sidebar Widget Area 3. If your want to display more widget - uncoment this
+  register_sidebar(array(
+    'name' => __('Блок виджетов #3', 'wpeasy'),
+    'description' => __('Description for this widget-area...', 'wpeasy'),
+    'id' => 'widgetarea3',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h6>',
+    'after_title' => '</h6>'
+  ));
+
 }
 
 //  Custom Excerpts
@@ -722,4 +733,30 @@ function woo_archive_custom_cart_button_text() {
 
 }
 
+
+//add to cart after ajax quantity
+add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+
+                global $woocommerce;
+
+                ob_start();
+
+                ?>
+
+                <a class="your-class-name" href="/cart.htm" title="<?php _e('Корзина', 'woothemes'); ?>">
+                <i class="fa fa-shopping-cart">
+                  <span class="items-count">
+                    <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+                  </span>
+                </i>
+                <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+
+                <?php
+
+                $fragments['a.your-class-name'] = ob_get_clean();
+
+                return $fragments;
+
+}
 ?>

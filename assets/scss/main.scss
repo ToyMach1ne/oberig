@@ -216,13 +216,9 @@ html {
 
 body {
   font: 300 14px/21px 'Roboto', 'sans-serif';
-
   overflow-x: hidden;
-
   height: 100%;
-
   letter-spacing: .1px;
-
   color: #696e6e;
   background: #232830;
   background-attachment: fixed;
@@ -977,28 +973,24 @@ blockquote {
 
   background: #fff;
   &:before {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
-
     position: absolute;
     top: 26px;
     left: 19px;
-
     width: 20px;
-
     content: '“';
   }
   &:after {
+    font-size: 40px;
+    font-weight: bold;
     position: absolute;
-    bottom: -10px;
-    left: 20px;
-
+    top:26px;
+    rigjt: 20px;
     width: 17px;
     height: 10px;
+    content: '”';
 
-    content: '';
-
-    background: url('../img/blockquote_arrow.png') no-repeat;
   }
 }
 
@@ -4254,7 +4246,6 @@ fieldset legend {
 
 #footer {
   padding: 45px 0 0;
-
   color: #bdc3c7;
   &.type_2 {
     padding-top: 25px;
@@ -4264,6 +4255,12 @@ fieldset legend {
       .m_bottom_30 {
         .sidebar-right {
           width: 100%;
+          .widget_text {
+            display: none;
+          }
+          .WOOF_Widget {
+              display: none;
+            }
           #woocommerce_price_filter-2 {
             display: none;
           }
@@ -4272,32 +4269,27 @@ fieldset legend {
             box-shadow: none;
             h6 {
               font-size: 18px;
-
               padding: 15px 20px 14px;
-
               color: #fff;
               border-radius: 4px 4px 0 0;
               background: #323a45;
             }
             ul {
               padding: 10px 20px;
-
               background: #323a45;
               li {
                 &:first-child {
                   margin-bottom: 5px;
                   padding-bottom: 5px;
-
                   border-bottom: 1px solid #404852;
                 }
                 a {
                   padding: 7px 25px 7px 0;
-
                   word-break: break-all;
-
                   color: #fff;
                   &:hover {
                     color: #e74c3c;
+                    text-decoration: none;
                   }
                 }
               }
@@ -4309,7 +4301,6 @@ fieldset legend {
           min-height: 91px;
           margin: 0;
           padding: 15px 0;
-
           border-bottom: 1px solid #404852;
           &:first-child {
             padding-top: 0;
@@ -4319,7 +4310,6 @@ fieldset legend {
           }
           figure {
             text-align: center;
-
             border: none;
             background: none;
             box-shadow: none;
@@ -4327,6 +4317,7 @@ fieldset legend {
               color: #fff;
               &:hover {
                 color: #e74c3c;
+                text-decoration: none;
               }
               .onsale {
                 display: none;
@@ -4339,7 +4330,7 @@ fieldset legend {
                 height: auto;
                 max-height: 60px;
               }
-              h3 {
+              h2, h3 {
                 font-size: 15px;
               }
               .price {
@@ -4452,6 +4443,9 @@ fieldset legend {
   }
   .horizontal_list {
     display: block !important;
+    li {
+      margin-left: 0;
+    }
   }
   #container {
     min-height: 0!important;
@@ -4467,19 +4461,19 @@ fieldset legend {
           padding: 0;
           figure {
             a {
+              &:hover {
+                text-decoration: none;
+              }
               img {
                 width: 100%;
                 max-width: 242px;
                 max-height: 242px;
               }
-              h3 {
+              h2 {
                 font-size: 16px;
-
                 margin-bottom: 15px;
                 padding-top: 15px;
-
                 text-align: center;
-
                 color: #292f38;
                 &:hover {
                   color: #e74c3c;
@@ -4488,12 +4482,16 @@ fieldset legend {
               .price {
                 font-size: 1.25em;
                 font-weight: 500;
-
                 display: block;
-
                 margin-bottom: 15px;
-
                 color: #e74c3c;
+                del {
+                color: #292f38;
+                font-size: 14px;
+                }
+                ins {
+                text-decoration: none;
+                }
               }
             }
             .button {
@@ -4852,6 +4850,72 @@ fieldset legend {
 ------------------------------------- */
 
 .woocommerce {
+  #container {
+    #content {
+      .archive-wrapper {
+        .products_container {
+          .product_item {
+            figure {
+              a {
+                &:hover {
+                  text-decoration: none;
+                }
+                h2 {
+          font-size: 16px;
+          margin-bottom: 15px;
+          padding-top: 15px;
+          text-align: center;
+          color: #292f38;
+          &:hover {
+            color: #e74c3c;
+          }
+                }
+                .price {
+                  del {
+                  span {
+                    color: #6a6a6a;
+                    font-size: 14px;
+                  }
+                }
+                ins {
+                  text-decoration: none;
+                  span {
+                    color: #e74c3c;
+                  }
+                }
+                }
+              }
+              .added_to_cart {
+                display: none;
+              }
+            }
+          }
+        }
+        .sidebar-right {
+          .WOOF_Widget{
+            margin-bottom: 20px;
+            border-radius:4px;
+          }
+          .widget-woof {
+            background-color: #fff;
+            box-shadow: 0 0 17px rgba(0,0,0,.12);
+            padding: 15px;
+            padding-bottom: 0;
+            h6 {
+              display: none;
+                          }
+              .woof_sid {
+              .woof_redraw_zone {
+                    .woof_container_pa_price {
+                      display: none;
+                    }
+              }
+              }
+          }
+        }
+      }
+    }
+  }
   div {
     .product {
       width: 1170px;
@@ -5100,6 +5164,11 @@ fieldset legend {
         height: auto;
         min-height: 1000px;
         .products_container {
+          .woof_products_top_panel {
+            position:absolute;
+            top:-14px;
+            right: 0;
+          }
           .product_item {
             figure {
               a {
@@ -5150,7 +5219,7 @@ fieldset legend {
         }
         .page-title {
           padding-bottom: 15px;
-
+          margin-bottom: 15px;
           border-bottom: 1px solid #e2e6e7;
         }
         .woocommerce-result-count {
@@ -5283,14 +5352,12 @@ fieldset legend {
               li {
                 padding: 7px 25px 7px 0;
                 padding-left: 20px;
-
-                transition: color .4s ease, background-color .4s ease;
-
+                transition: color .4s ease, background-color .3s ease;
                 border-bottom: 1px solid #e2e6e7;
                 a {
-                  transition: color .4s ease, background-color .4s ease;
-
+                  transition: color .3s ease, background-color .3s ease;
                   color: #34495e;
+                  text-decoration: none;
                   &:hover {
                     color: #e74c3c;
                   }
@@ -5303,7 +5370,212 @@ fieldset legend {
     }
   }
 }
+//Single page for posts (not woocommerce products)
+.single {
+  .wide_layout {
+    .page_content_offset {
+      padding: 40px 0 0 0;
+    .container {
+      .row {
+          article {
+            ul, ol {
+              padding: 10px 30px;
+                }
+              ul {
+                li {
+                  list-style-type: decimal;
+                  padding: 5px;
+                }
+              }
+              ol {
+                li {
+                  list-style-type: disc;
+                  padding: 5px;
+                }
+              }
+              h1 {
+                margin-bottom: 30px;
+              }
+            h2 {
+              margin-bottom: 15px;
+            }
+            p {
+                  margin-bottom: 15px;
+              .alignright {
+                  float: right;
+                  margin: 0.35em 0 0.35em 1.313em;
+                }
 
+              .alignleft {
+                float: left;
+                margin: 0.35em 1.313em 0.35em 0;
+              }
+            }
+            blockquote {
+              position: relative;
+              background-color: #f2f4f5;
+              padding: 10px;
+              text-align: center;
+              border-radius: 6px;
+              margin-bottom: 15px;
+              &:after {
+                    position: absolute;
+                    top: 26px;
+                    right: 20px;
+                    width: 17px;
+                    height: 10px;
+                    color: #e74c3c;
+              }
+            }
+          }
+      }
+    }
+  }
+  }
+}
+//Custom Page
+.page {
+  .page_content_offset {
+    .container {
+      .row {
+        section {
+          article {
+            ul, ol {
+              padding: 10px 30px;
+                }
+              ul {
+                li {
+                  padding: 5px;
+                }
+              }
+              ol {
+                li {
+                  list-style-type: disc;
+                  padding: 5px;
+                }
+              }
+            h2 {
+              margin-bottom: 15px;
+            }
+            p {
+                  margin-bottom: 15px;
+              .alignright {
+                  float: right;
+                  margin: 0.35em 0 0.35em 1.313em;
+                }
+
+              .alignleft {
+                float: left;
+                margin: 0.35em 1.313em 0.35em 0;
+              }
+            }
+            blockquote {
+              position: relative;
+              background-color: #f2f4f5;
+              padding: 10px;
+              text-align: center;
+              border-radius: 6px;
+              margin-bottom: 15px;
+              &:after {
+                    position: absolute;
+                    top: 26px;
+                    right: 20px;
+                    width: 17px;
+                    height: 10px;
+                    color: #e74c3c;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//Custom category (not woocommece)
+.category {
+.wide_layout {
+  .container {
+    .row {
+      .col-md-9 {
+        padding: 50px 15px;
+        article {
+            h1 {
+                  padding-bottom: 15px;
+                  margin-bottom: 15px;
+                  border-bottom: 1px solid #e2e6e7;
+                  color: #696e6e;
+                  a {
+                    color: #696e6e;
+                  }
+            }
+            .looper {
+              overflow:hidden;
+              padding: 5px;
+              margin: 10px;
+              &:hover {
+                    box-shadow: 0 0 17px rgba(0,0,0,.12);
+              }
+              a {
+                img {
+                  float: left;
+                  margin-right: 20px;
+                  max-width: 242px;
+                  border-radius:4px;
+                }
+              }
+              .inner-title {
+                margin-bottom: 15px;
+                padding-top: 10px;
+                a {
+                      color: #23527c;
+                      &:hover {
+                        color: #e74c3c;
+                        text-decoration: none;
+                      }
+                }
+              }
+            }
+        }
+      }
+      .col-md-3 {
+        padding-top: 50px;
+        aside {
+          .widget {
+            h6 {
+              font-size: 18px;
+              padding: 15px 20px 14px;
+              color: #fff;
+              border-radius: 4px 4px 0 0;
+              background: #323a45;
+            }
+            ul {
+                  background-color: #fff;
+                  box-shadow: 0 0 17px rgba(0,0,0,.12);
+                  padding: 15px;
+                  li {
+                        padding: 7px 25px 7px 0;
+                        padding-left: 20px;
+                        -webkit-transition: color .4s ease,background-color .3s ease;
+                        transition: color .4s ease,background-color .3s ease;
+                        border-bottom: 1px solid #e2e6e7;
+                    a {
+                      -webkit-transition: color .3s ease,background-color .3s ease;
+                      transition: color .3s ease,background-color .3s ease;
+                      color: #34495e;
+                      text-decoration: none;
+                      &:hover {
+                            color: #e74c3c;
+                      }
+                    }
+                  }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
 .cart {
   aside {
     display: none;
@@ -5603,25 +5875,47 @@ fieldset legend {
   }
 }
 
-.single {
+.single-product {
+  #container {
+    #content {
+      .entry-summary {
+        .price {
+          del {
+            color: #000;
+            opacity:.7;
+            span {
+              color: #000;
+              font-size: 17px;
+            }
+          }
+          ins {
+            text-decoration: none;
+          }
+        }
+      }
+      .onsale {
+        display: none;
+      }
+    }
+  }
   .related {
     min-height: 500px;
     .product_item {
       padding: 0;
       figure {
         a {
+          &:hover {
+            text-decoration: none;
+          }
           img {
             max-width: 242px;
             max-height: 242px;
           }
-          h3 {
+          h2 {
             font-size: 16px;
-
             margin-bottom: 15px;
             padding-top: 15px;
-
             text-align: center;
-
             color: #292f38;
             &:hover {
               color: #e74c3c;
@@ -5630,12 +5924,20 @@ fieldset legend {
           .price {
             font-size: 1.25em;
             font-weight: 500;
-
             display: block;
-
             margin-bottom: 15px;
-
             color: #e74c3c;
+            del {
+                  span {
+                    color: #6a6a6a;
+                  }
+                }
+                ins {
+                  text-decoration: none;
+                  span {
+                    color: #e74c3c;
+                  }
+                }
           }
         }
         .button {
@@ -5701,7 +6003,7 @@ fieldset legend {
           box-shadow: 0 2px 0 #c0392b;
           &:hover {
             cursor: pointer;
-
+            text-decoration: none;
             background-color: #34495e;
             box-shadow: 0 2px 0 #2c3e50;
           }
@@ -6965,13 +7267,23 @@ fieldset legend {
 .main_menu {
   li {
     position: relative;
-
     margin-left: 40px;
-
     transition: .5s ease-out;
-
     border-radius: 4px;
+    &:hover {
+      a {
+          background: #e74c3c;
+          border-radius:4px;
+          color:#fff;
+          text-decoration: none;
+      }
+    }
     &:last-child {
+      &:hover {
+        a {
+          color:#fff;
+        }
+      }
       a {
         color: #e74c3c;
       }
@@ -6988,39 +7300,36 @@ fieldset legend {
     .sub-menu {
       position: absolute;
       left: 0;
-
       visibility: hidden;
-
       width: 195px;
       margin-top: 10px;
       padding: 0;
-
       transition: all .4s ease;
       transform: translateY(35px);
-
       opacity: 0;
       border-top: 3px solid #e74c3c;
       background: #fff;
       box-shadow: 0 1px 2px rgba(0,0,0,.15);
       li {
         line-height: 2.5;
-
         margin-left: 0;
-
         text-align: center;
-
         border-radius: 0;
         a {
           font-weight: 200;
-
           padding: 7.7px 20px;
-
+          background: #fff;
+          color: #292f38;
           text-transform: inherit;
+          display: block;
+          padding: 1px 20px;
         }
         &:hover {
           background-color: #ecf0f1;
           a {
             color: #e74c3c;
+            background:inherit;
+            width: 100%;
           }
         }
       }

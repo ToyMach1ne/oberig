@@ -1345,3 +1345,6 @@ $(document).ready(function() {
     $(".slider-button").css("transform", "translateY(-50px)");
   })
 });
+
+
+
