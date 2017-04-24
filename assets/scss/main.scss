@@ -224,6 +224,12 @@ body {
   background-attachment: fixed;
 }
 
+@font-face {
+  font-family: Leksa;
+
+  src: url(../fonts/leksapro-black.ttf);
+  src: url(../fonts/leksapro-black.ttf) format('embedded-opentype');
+}
 /* -----------------------------------
 
   2. Basic classes and elements
@@ -1246,9 +1252,16 @@ a.logo span {
     }
   }
   .item {
+    &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    }
     img {
       display: block;
-
       width: 100%;
       height: auto;
       max-height: 288px;
@@ -4860,6 +4873,15 @@ fieldset legend {
                 &:hover {
                   text-decoration: none;
                 }
+                .onsale {
+                  left: 164px;
+                  top: -4px;
+                  height: 80px;
+                  width: 85px;
+                  text-indent: -99999px !important;
+                  background-image: url(../img/sale_product.png);
+                  background-repeat: no-repeat;
+                }
                 h2 {
           font-size: 16px;
           margin-bottom: 15px;
@@ -5151,7 +5173,25 @@ fieldset legend {
     }
   }
 }
-
+.tax-product_cat {
+  #container {
+    #content {
+      .archive-wrapper {
+        .products_container {
+          .product_item  {
+            figure {
+              a {
+                .onsale {
+                      left: 129px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .archive {
   #owl-demo {
     display: none !important;
@@ -5968,20 +6008,18 @@ fieldset legend {
     .owl-item {
       .item {
         .slider-text {
+          font-family: Leksa;
           font-size: 45px;
-
           position: absolute;
           top: 10%;
           left: 41%;
-
           display: block;
-
           transition: .3s all ease-out;
           transition-delay: 1s;
           text-align: center;
-
           opacity: 0;
-          color: #000;
+          color: #fff;
+          font-weight: bold;
         }
         .slider-button {
           font-size: 20px;
