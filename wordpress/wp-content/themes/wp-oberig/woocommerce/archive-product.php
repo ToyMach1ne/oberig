@@ -33,11 +33,6 @@ get_header( 'shop' ); ?>
     </div>
     <?php endwhile; endif; ?>
 </div>
-<section class="breadcrumbs">
-    <div class="container">
-        <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
-    </div>
-</section>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -47,7 +42,6 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
 			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
@@ -119,6 +113,7 @@ get_header( 'shop' ); ?>
                 <?php wc_get_template( 'loop/no-products-found.php' ); ?>
 
               <?php endif; ?>
+
           </section>
 
           <aside class="col-lg-3 col-md-3 col-sm-3 sidebar-right">

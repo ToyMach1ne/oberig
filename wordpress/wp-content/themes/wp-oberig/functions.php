@@ -50,7 +50,8 @@ function wpeHeaderScripts() {
     wp_deregister_script( 'jquery-form' );
 
     //  Load footer scripts (footer.php)
-    wp_register_script('wpeScripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true); // Custom scripts
+    $curdate = time('H-i-s');
+    wp_register_script('wpeScripts', get_template_directory_uri() . '/js/scripts.js', array(), $curdate, true); // Custom scripts
     wp_enqueue_script('wpeScripts'); // Enqueue it!
   }
 }
@@ -173,7 +174,7 @@ function register_html5_menu() {
 if (function_exists('register_sidebar')) {
   //  Define Sidebar Widget Area 1
   register_sidebar(array(
-    'name' => __('Блок виджетов #1', 'wpeasy'),
+    'name' => __('Блок (Навигация футера)', 'wpeasy'),
     'description' => __('Description for this widget-area...', 'wpeasy'),
     'id' => 'widgetarea1',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -184,7 +185,7 @@ if (function_exists('register_sidebar')) {
   //  Define Sidebar Widget Area 2. If your want to display more widget - uncoment this
 
   register_sidebar(array(
-    'name' => __('Блок виджетов #2', 'wpeasy'),
+    'name' => __('Блок (Категория товара)', 'wpeasy'),
     'description' => __('Description for this widget-area...', 'wpeasy'),
     'id' => 'widgetarea2',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -195,7 +196,7 @@ if (function_exists('register_sidebar')) {
 
   //  Define Sidebar Widget Area 3. If your want to display more widget - uncoment this
   register_sidebar(array(
-    'name' => __('Блок виджетов #3', 'wpeasy'),
+    'name' => __('Блок (Категория записи(новостей))', 'wpeasy'),
     'description' => __('Description for this widget-area...', 'wpeasy'),
     'id' => 'widgetarea3',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -759,4 +760,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
                 return $fragments;
 
 }
+
+
+
 ?>

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 /**
  * Related Products
  *
@@ -64,4 +64,5 @@ if ( $products->have_posts() ) : ?>
 <?php echo $product->get_categories( ', ', '<span class="posted_in"><i class="fa fa-reply m_left_5 m_right_10 f_size_large"></i>' . _n( 'В категорию', 'В категорию', $cat_count, 'woocommerce' ) . ' ', '</span>' ); ?>
 <?php endif;
 
-wp_reset_postdata();
+wp_reset_postdata(); ?>
+ -->

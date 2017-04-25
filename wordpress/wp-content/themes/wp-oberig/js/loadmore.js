@@ -1,0 +1,2 @@
+jQuery(function(e){e("#true_loadmore").click(function(){e(this).text("Загружаю...");var r={action:"loadmore",query:true_posts,page:current_page};e.ajax({url:ajaxurl,data:r,type:"POST",success:function(r){r?(e("#true_loadmore").text("Загрузить ещё").before(r),current_page++,current_page==max_pages&&e("#true_loadmore").remove()):e("#true_loadmore").remove()}})})});
+//# sourceMappingURL=maps/loadmore.js.map

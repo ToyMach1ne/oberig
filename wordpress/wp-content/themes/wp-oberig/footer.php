@@ -1,27 +1,5 @@
 <footer id="footer">
   <div class="footer_top_part p_vr_0">
-
-    <div class="container">
-      <div class="row clearfix">
-        <div class="col-lg-6 col-md-6 col-sm-6 m_bottom_20 m_xs_bottom_10">
-          <ul class="clearfix horizontal_list social_icons">
-            <li class="facebook m_bottom_5 relative">
-              <span class="tooltip tr_all_hover r_corners color_dark f_size_small">Facebook</span>
-              <a href="#" class="r_corners t_align_c tr_delay_hover f_size_ex_large"><i class="fa fa-facebook"></i></a>
-            </li>
-            <li class="vk m_bottom_5 relative">
-              <span class="tooltip tr_all_hover r_corners color_dark f_size_small">В контакте</span>
-              <a href="#" class="r_corners t_align_c tr_delay_hover f_size_ex_large"><i class="fa fa-vk"></i></a>
-            </li>
-            <li class="envelope m_left_5 m_bottom_5 relative">
-              <span class="tooltip tr_all_hover r_corners color_dark f_size_small">Контакты</span>
-              <a href="#" class="r_corners f_size_ex_large t_align_c tr_delay_hover"><i class="fa fa-envelope-o"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
     <hr class="divider_type_4 m_bottom_50">
 
     <div class="container">
@@ -118,6 +96,20 @@
                     <p class="f_left f_mxs_none m_mxs_bottom_10">
                         © 2015 <span class="color_light">Интернет-магазин цветов и подарков Обериг.</span>
                     </p>
+          <ul class="clearfix horizontal_list social_icons">
+            <li class="facebook m_bottom_5 relative">
+              <span class="tooltip tr_all_hover r_corners color_dark f_size_small">Facebook</span>
+              <a href="#" class="r_corners t_align_c tr_delay_hover f_size_ex_large"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li class="vk m_bottom_5 relative">
+              <span class="tooltip tr_all_hover r_corners color_dark f_size_small">В контакте</span>
+              <a href="#" class="r_corners t_align_c tr_delay_hover f_size_ex_large"><i class="fa fa-vk"></i></a>
+            </li>
+            <li class="envelope m_left_5 m_bottom_5 relative">
+              <span class="tooltip tr_all_hover r_corners color_dark f_size_small">Контакты</span>
+              <a href="#" class="r_corners f_size_ex_large t_align_c tr_delay_hover"><i class="fa fa-envelope-o"></i></a>
+            </li>
+          </ul>
                 </div>
             </div>
         </footer>
