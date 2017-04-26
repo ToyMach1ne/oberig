@@ -5685,6 +5685,8 @@ fieldset legend {
                   img {
                     max-width: 242px;
                     max-height: 242px;
+                    width: 100%;
+                    border-radius:4px;
                   }
                   h2 {
                     font-size: 16px;
@@ -6360,6 +6362,8 @@ fieldset legend {
           img {
             max-width: 242px;
             max-height: 242px;
+            width: 100%;
+            border-radius:4px;
           }
           h2 {
             font-size: 16px;

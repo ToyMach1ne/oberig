@@ -205,6 +205,17 @@ if (function_exists('register_sidebar')) {
     'after_title' => '</h6>'
   ));
 
+    //  Define Sidebar Widget Area 3. If your want to display more widget - uncoment this
+  register_sidebar(array(
+    'name' => __('Блок (Категория записи(в футере))', 'wpeasy'),
+    'description' => __('Description for this widget-area...', 'wpeasy'),
+    'id' => 'widgetarea4',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h6>',
+    'after_title' => '</h6>'
+  ));
+
 }
 
 //  Custom Excerpts

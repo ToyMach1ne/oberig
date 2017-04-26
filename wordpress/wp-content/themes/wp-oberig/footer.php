@@ -7,8 +7,8 @@
 
         <div class="col-lg-3 col-md-3 col-sm-3 m_xs_bottom_30 m_bottom_30">
           <aside class="col-lg-3 col-md-3 col-sm-3 sidebar-right">
-            <?php if ( is_active_sidebar('widgetarea2') ) : ?>
-              <?php dynamic_sidebar( 'widgetarea2' ); ?>
+            <?php if ( is_active_sidebar('widgetarea4') ) : ?>
+              <?php dynamic_sidebar( 'widgetarea4' ); ?>
             <?php endif; ?>
           </aside>
         </div>
