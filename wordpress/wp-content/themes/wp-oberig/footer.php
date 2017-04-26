@@ -94,7 +94,7 @@
             <div class="footer_bottom_part">
                 <div class="container clearfix t_mxs_align_c">
                     <p class="f_left f_mxs_none m_mxs_bottom_10">
-                        © 2015 <span class="color_light">Интернет-магазин цветов и подарков Обериг.</span>
+                        © 2005 - <?php echo date("Y"); ?> <span class="color_light">Интернет-магазин цветов и подарков Обериг.</span>
                     </p>
           <ul class="clearfix horizontal_list social_icons">
             <li class="facebook m_bottom_5 relative">
@@ -110,6 +110,10 @@
               <a href="#" class="r_corners f_size_ex_large t_align_c tr_delay_hover"><i class="fa fa-envelope-o"></i></a>
             </li>
           </ul>
+          <div class="payment_wrapp">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/mastercard-visa.png" alt="Методы оплаты">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/PrivatBANK.png" alt="Методы оплаты">
+            </div>
                 </div>
             </div>
         </footer>

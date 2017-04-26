@@ -29,13 +29,13 @@
           <div class="clearfix row">
               <div class="col-lg-4 col-md-5 col-sm-4 t_align_c st_xs_align_c">
                   <p>&nbsp;</p>
-                  <p class="f_size_big default_t_color"><?php the_field('header_phone', 30); ?></p>
+                  <a href="tel:<?php the_field('header_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('header_phone', 30); ?></a>
                   <p>&nbsp;</p>
               </div>
               <div class="col-lg-8 col-md-7 col-sm-8 clearfix t_xs_align_c">
                   <div class="relative f_left">
                     <a href="<?php echo home_url(); ?>" class="logo m_xs_bottom_10 d_inline_b">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" width="350" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
+                      <img src="<?php echo get_template_directory_uri(); ?>/img/logo_true.png" width="350" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
                     </a>
                   </div><!-- relative f_left -->
                   <ul id="msMiniCart" class="d_inline_b horizontal_list clearfix t_align_l f_right f_xs_none site_settings">

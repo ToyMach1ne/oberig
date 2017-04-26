@@ -1374,5 +1374,10 @@ $(".tabs li").click(function(e) {
 
 });
 
+$('.map-container')
+  .click(function(){
+      $(this).find('iframe').addClass('clicked')})
+  .mouseleave(function(){
+      $(this).find('iframe').removeClass('clicked')});
 //END ADD CLASS TO PRODUCT TABS//
 

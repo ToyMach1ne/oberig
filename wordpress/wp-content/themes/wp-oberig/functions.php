@@ -738,29 +738,61 @@ function woo_archive_custom_cart_button_text() {
 //add to cart after ajax quantity
 add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
-
                 global $woocommerce;
-
-                ob_start();
-
-                ?>
-
+                ob_start(); ?>
                 <a class="your-class-name" href="/cart.htm" title="<?php _e('Корзина', 'woothemes'); ?>">
-                <i class="fa fa-shopping-cart">
-                  <span class="items-count">
-                    <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
-                  </span>
-                </i>
-                <?php echo $woocommerce->cart->get_cart_total(); ?></a>
-
-                <?php
-
-                $fragments['a.your-class-name'] = ob_get_clean();
-
+                  <i class="fa fa-shopping-cart">
+                    <span class="items-count">
+                      <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+                    </span>
+                  </i>
+                  <?php echo $woocommerce->cart->get_cart_total(); ?>
+                </a>
+                <?php $fragments['a.your-class-name'] = ob_get_clean();
                 return $fragments;
-
 }
 
 
+
+//Comment post type
+add_action( 'init', 'post_type_comment' );
+function post_type_comment() {
+
+  $labels = array(
+    'name' => 'Комментарий',
+    'singular_name' => 'Комментарий',
+    'add_new' => 'Add',
+    'add_new_item' => 'Add',
+    'edit' => 'Edit',
+    'edit_item' => 'Edit',
+    'new-item' => 'Add',
+    'view' => 'View',
+    'view_item' => 'View',
+    'search_items' => 'Search',
+    'not_found' => 'Not Found',
+    'not_found_in_trash' => 'Not Found',
+    'parent' => 'Parent'
+  );
+
+  $args = array(
+    'description' => 'comment Post Type',
+    'show_ui' => true,
+    'menu_position' => 5,
+    'exclude_from_search' => false,
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'supports' => array('title','editor','thumbnail','excerpt','comments'),
+    'has_archive' => true,
+    'rewrite' => array( 'slug' => 'comment' ),
+    // https://developer.wordpress.org/resource/dashicons/
+    'menu_icon' => 'dashicons-admin-site',
+    'show_in_rest' => true
+  );
+
+  register_post_type( 'comment' , $args );
+}
 
 ?>

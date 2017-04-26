@@ -51,5 +51,7 @@
         </div>
     </div>
 </div><!-- page_content_offset -->
-
+                    <div class="map-container">
+                      <?php the_field('map'); ?>
+                    </div>
 <?php get_footer(); ?>
