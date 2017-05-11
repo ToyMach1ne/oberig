@@ -4,7 +4,7 @@
 
 @import 'grid/bootstrap';
 @import 'grid/bootstrap-theme';
-
+@import 'variables';
 @import 'owl.carousel';
 @import 'owl.transitions';
 
@@ -247,7 +247,7 @@ body {
 
 [class*='layout'],
 .menu_wrap.type_3 {
-  background: #fafbfb;
+  background: $pale-blue;
 }
 
 .tt_uppercase {
@@ -651,7 +651,7 @@ mark,
 ::-o-selection,
 ::-ms-selection {
   color: #fff;
-  background: #e74c3c;
+  background: $red;
 }
 
 ::-webkit-input-placeholder {
@@ -691,9 +691,9 @@ mark,
 ------------------------------------- */
 
 a {
-  color: #e74c3c;
+  color: $red;
   &[class*='color']:not(.color_light):hover {
-    color: #e74c3c;
+    color: $red;
   }
 }
 
@@ -712,7 +712,7 @@ label[class*='required']:after,
 .vertical_list_type_7 li:before,
 .first_letter_1 > .fl,
 .info_block_type_1:hover [class*='icon_wrap'] {
-  color: #e74c3c;
+  color: $red;
 }
 
 .shopping_cart,
@@ -721,35 +721,35 @@ label[class*='required']:after,
 .banner_type_2.red,
 .vertical_list_type_3 li:before,
 .vertical_list_type_7 li:before {
-  border-color: #e74c3c;
+  border-color: $red;
 }
 
 .shopping_cart:before,
 .sub_menu_wrap:before {
-  border-bottom-color: #e74c3c;
+  border-bottom-color: $red;
 }
 
 .count,
 .bg_scheme_color {
-  background: #e74c3c;
+  background: $red;
 }
 
 .button_type_3 {
   &:hover .count.type_2,
   &.active .count.type_2 {
-    background: #e74c3c;
+    background: $red;
   }
 }
 
 .md_no-touch .main_menu > li:hover > a {
-  background: #e74c3c;
+  background: $red;
 }
 
 .main_menu > {
   li.current > a,
   .current_click > a,
   li.touch_open_sub > a {
-    background: #e74c3c;
+    background: $red;
   }
 }
 
@@ -757,13 +757,13 @@ label[class*='required']:after,
   &.round .bullet {
     &:hover,
     &.selected {
-      background: #e74c3c;
+      background: $red;
     }
   }
   &.navbar .bullet {
     &:hover,
     &.selected {
-      background: #e74c3c;
+      background: $red;
     }
   }
 }
@@ -775,14 +775,14 @@ label[class*='required']:after,
 .sw_button.googlemap,
 #menu_button,
 .vertical_list_type_2 li:before {
-  background: #e74c3c;
+  background: $red;
 }
 
 .camera_wrap {
   .camera_pag .camera_pag_ul .cameracurrent,
   .camera_prev:hover,
   .camera_next:hover {
-    background: #e74c3c;
+    background: $red;
   }
 }
 
@@ -793,11 +793,11 @@ label[class*='required']:after,
 .first_letter_2 > .fl,
 .info_block_type_2:hover [class*='icon_wrap'],
 #shopping_button:hover > a .count {
-  background: #e74c3c;
+  background: $red;
 }
 
 .select_color.red {
-  background-color: #e74c3c;
+  background-color: $red;
 }
 
 .tp-leftarrow:hover,
@@ -806,7 +806,7 @@ label[class*='required']:after,
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e74c3c;
+  background: $red;
 }
 
 /* -----------------------------------
@@ -881,10 +881,99 @@ a,
 .color_light_2 {
   color: #f9f9f9;
 }
+.st_xs_align_c {
+  position: relative;
+  .default_t_color {
+    font-size: 20px;
 
-.default_t_color {
-  color: #696e6e;
+    display: block;
+
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 5px;
+
+    color: #696e6e;
+    border-bottom: 1px dashed;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+  a {
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+  .show_phone,
+  .hidden_phone {
+    position: absolute;
+    top: 5px;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    text-align: center;
+    border: 1px dashed;
+    border-radius: 50%;
+    overflow:hidden;
+    i {
+      font-size: 23px;
+      cursor: pointer;
+      transition:.5s all ease-out;
+    }
+  }
+  .show_phone {
+        &:hover {
+      i {
+        transform: translateY(90%);
+      }
+    }
+    .arrow_down {
+      i {
+        line-height: .8;
+      }
+    }
+    .go_down {
+      position: absolute;
+    top: -20px;
+    right: 1px;
+    color:$orange;
+    }
+  }
+  .hidden_phone {
+        &:hover {
+      i {
+        transform: translateY(-133%);
+      }
+    }
+    display: none;
+    i {
+      line-height: .7;
+    }
+    .rise_up {
+      position: absolute;
+    bottom: -20px;
+    right: 1px;
+    color:$orange;
+    }
+  }
+  &.st_xs_align_c--opened {
+    .show_phone {
+      display: none;
+    }
+    .hidden_phone {
+      display: block;
+    }
+    a {
+      &:nth-child(2),
+      &:nth-child(3) {
+        display: block;
+      }
+    }
+  }
 }
+
 
 .color_green {
   color: #27ae60;
@@ -1071,12 +1160,13 @@ blockquote {
   .row {
     .col-md-7 {
       .relative {
-            margin-left: 80px;
-            a {
-              img {
-                width: 180px;
-              }
-            }
+        margin-left: 20px;
+        a {
+          img {
+            width: 250px;
+            height: 150px;
+          }
+        }
       }
     }
     .col-md-5 {
@@ -1088,7 +1178,7 @@ blockquote {
     }
   }
   &.type_2 {
-    padding-bottom: 25px;
+    padding-bottom: 0;
   }
 }
 
@@ -1126,6 +1216,8 @@ a.logo span {
 }
 
 #footer {
+  padding-top: 50px;
+
   background: #323a45;
 }
 
@@ -1201,12 +1293,6 @@ a.logo span {
   }
 }
 
-
-
-
-
-
-
 .sub_menu li a {
   display: block;
 
@@ -1260,12 +1346,12 @@ a.logo span {
 
 #owl-demo {
   position: relative;
-
-  min-height: 288px;
-
+  min-height: 320px;
   transform: translateX(0px);
-
   opacity: 1;
+  background-image: url(../img/krasivyj-buket-foto-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   &:hover {
     .owl-nav {
       .owl-prev {
@@ -1281,24 +1367,18 @@ a.logo span {
     }
   }
   .item {
-    &:before {
-      position: absolute;
-
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      content: '';
-
-      background-color: rgba(0, 0, 0, .45);
-    }
+    background-color: rgba(0, 0, 0, 0.80);
     img {
       display: block;
-
-      width: 100%;
-      height: 100%;
+      max-width: 100%;
+      max-width: 240px;
       max-height: 100%;
+      max-height: 320px;
+      height: 100%;
+      margin: 0 auto;
+      border:1px solid #fff;
+      border-top: none;
+      border-bottom: none;
     }
   }
   .owl-nav {
@@ -1320,7 +1400,8 @@ a.logo span {
       &:hover {
         cursor: pointer;
 
-        background-color: #d55a4e;
+        color: $green;
+        background-color: $yellow;
       }
     }
     .owl-prev {
@@ -1334,8 +1415,6 @@ a.logo span {
     }
   }
 }
-
-
 
 .tp-leftarrow i[class^='fa '],
 .tp-rightarrow i[class^='fa '],
@@ -1407,7 +1486,7 @@ a.logo span {
 
     content: '';
 
-    background: #e74c3c;
+    background: $red;
   }
 }
 
@@ -3531,7 +3610,6 @@ button:hover .tooltip {
 
 .breadcrumbs {
   padding: 5px 0;
-
   background: #f2f4f5;
   #container {
     #content {
@@ -3543,7 +3621,7 @@ button:hover .tooltip {
           -webkit-transition: color .4s ease,background-color .4s ease;
                   transition: color .4s ease,background-color .4s ease;
 
-          color: #e74c3c;
+          color: $red;
         }
       }
     }
@@ -3589,7 +3667,7 @@ button:hover .tooltip {
 
           color: #000;
           &:hover {
-            color: #e74c3c;
+            color: $red;
           }
         }
       }
@@ -3667,13 +3745,6 @@ button:hover .tooltip {
   width: 458px;
 }
 
-.iframe_video_wrap {
-  position: relative;
-
-  width: 100%;
-  height: 0;
-  padding-bottom: 56%;
-}
 
 .map_container {
   position: relative;
@@ -3682,16 +3753,6 @@ button:hover .tooltip {
   height: 0;
   padding-bottom: 56%;
   padding-bottom: 43%;
-}
-
-.iframe_video_wrap > iframe,
-.map_container > iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
 }
 
 .addthis_widget_container {
@@ -4020,21 +4081,6 @@ aside .addthis_widget_container {
   padding: 25px 0;
 }
 
-.big_video_container {
-  position: relative;
-
-  width: 960px;
-  height: 540px;
-  > iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-  }
-}
-
 /* -----------------------------------
 
   15. Forms
@@ -4353,7 +4399,7 @@ fieldset legend {
                   &:hover {
                     text-decoration: none;
 
-                    color: #e74c3c;
+                    color: $red;
                   }
                 }
               }
@@ -4384,7 +4430,7 @@ fieldset legend {
               &:hover {
                 text-decoration: none;
 
-                color: #e74c3c;
+                color: $red;
               }
               .onsale {
                 display: none;
@@ -4411,7 +4457,7 @@ fieldset legend {
                 ins {
                   text-decoration: none;
                   span {
-                    color: #e74c3c;
+                    color: $red;
                   }
                 }
               }
@@ -4436,10 +4482,12 @@ fieldset legend {
 
 .footer_bottom_part {
   padding: 24px 0 22px;
+
   color: #696e6e;
   background: #292f38;
   .container {
     display: flex;
+
     align-items: center;
     justify-content: space-around;
     .payment_wrapp {
@@ -4452,7 +4500,7 @@ fieldset legend {
 
 /* -----------------------------------
 
-  16.1 Inline styles
+  16.1 Pages styles
 
 ------------------------------------- */
 
@@ -4481,7 +4529,7 @@ fieldset legend {
 
           color: #292f38;
           &:hover {
-            color: #e74c3c;
+            color: $red;
           }
         }
         .price {
@@ -4492,7 +4540,7 @@ fieldset legend {
 
           margin-bottom: 15px;
 
-          color: #e74c3c;
+          color: $red;
         }
       }
       .button {
@@ -4504,11 +4552,11 @@ fieldset legend {
         text-align: center;
 
         color: #fff;
-        background-color: #e74c3c;
-        box-shadow: 0 2px 0 #c0392b;
+        background: #34495e;
+        box-shadow: 0 2px 0 #34495e;
         &:hover {
           color: #fff;
-          background: #34495e;
+          background: lighten(#34495e, 10%);
           box-shadow: 0 2px 0 #34495e;
         }
       }
@@ -4516,6 +4564,7 @@ fieldset legend {
   }
 }
 
+//Главая страница//
 .home {
   #true_loadmore {
     position: absolute;
@@ -4580,7 +4629,7 @@ fieldset legend {
 
                 color: #292f38;
                 &:hover {
-                  color: #e74c3c;
+                  color: $orange;
                 }
               }
               .price {
@@ -4591,7 +4640,7 @@ fieldset legend {
 
                 margin-bottom: 15px;
 
-                color: #e74c3c;
+                color: $orange;
                 del {
                   font-size: 14px;
 
@@ -4611,11 +4660,11 @@ fieldset legend {
               text-align: center;
 
               color: #fff;
-              background-color: #e74c3c;
-              box-shadow: 0 2px 0 #c0392b;
+              background: $green;
+              box-shadow: 0 2px 0 #34495e;
               &:hover {
                 color: #fff;
-                background: #34495e;
+                background: $dark;
                 box-shadow: 0 2px 0 #34495e;
               }
             }
@@ -4965,6 +5014,13 @@ fieldset legend {
           .product_item {
             figure {
               a {
+                .button {
+                  background-color: $green;
+                  box-shadow: 0 2px 0 $dark;
+                  &:hover {
+                    background-color: $dark;
+                  }
+                }
                 &:hover {
                   text-decoration: none;
                 }
@@ -4991,7 +5047,7 @@ fieldset legend {
 
                   color: #292f38;
                   &:hover {
-                    color: #e74c3c;
+                    color: $red;
                   }
                 }
                 .price {
@@ -5005,7 +5061,7 @@ fieldset legend {
                   ins {
                     text-decoration: none;
                     span {
-                      color: #e74c3c;
+                      color: $orange;
                     }
                   }
                 }
@@ -5143,7 +5199,7 @@ fieldset legend {
             height: 48px;
             padding: 14px 22px 13px;
 
-            background-color: #e74c3c;
+            background-color: $red;
             box-shadow: 0 2px 0 #c0392b;
             &:hover {
               background-color: #34495e;
@@ -5172,7 +5228,7 @@ fieldset legend {
             font-size: 23px;
             font-weight: 500;
 
-            color: #e74c3c;
+            color: $red;
           }
         }
         .product_meta {
@@ -5206,7 +5262,7 @@ fieldset legend {
             &:hover {
               background: #323a45 !important;
               a {
-                color: #e74c3c !important;
+                color: $red !important;
               }
             }
             &:before,
@@ -5301,7 +5357,7 @@ fieldset legend {
 
               text-align: center;
 
-              color: #e74c3c;
+              color: $red;
             }
           }
           .button {
@@ -5313,7 +5369,7 @@ fieldset legend {
             text-align: center;
 
             color: #fff;
-            background-color: #e74c3c;
+            background-color: $red;
             box-shadow: 0 2px 0 #c0392b;
             &:hover {
               color: #fff;
@@ -5351,6 +5407,8 @@ fieldset legend {
     }
   }
 }
+
+//Страница Категорий товара//
 .tax-product_cat {
   #container {
     #content {
@@ -5359,12 +5417,23 @@ fieldset legend {
       }
       .archive-wrapper {
         .products_container {
+          width: 100%;
           .product_item {
+            display: inline-block;
+
+            width: 21%;
             figure {
               a {
                 .onsale {
                   top: -1px;
                   left: -1px;
+                }
+              }
+              .button {
+                background: $green;
+                box-shadow: 0 2px 0 $dark;
+                &:hover {
+                  background-color: $dark;
                 }
               }
             }
@@ -5374,6 +5443,7 @@ fieldset legend {
     }
   }
 }
+//Страница Рубрики, Shop//
 .archive {
   #owl-demo {
     display: none !important;
@@ -5417,14 +5487,14 @@ fieldset legend {
 
                 color: #292f38;
                 &:hover {
-                  color: #e74c3c;
+                  color: $red;
                   background: none;
                 }
               }
               .current {
                 font-weight: 200;
 
-                color: #e74c3c;
+                color: $red;
                 background: none;
               }
               .next,
@@ -5433,7 +5503,7 @@ fieldset legend {
                 background-color: #ecf0f1;
                 &:hover {
                   color: #fff;
-                  background-color: #e74c3c;
+                  background-color: $red;
                 }
               }
             }
@@ -5488,7 +5558,7 @@ fieldset legend {
 
                 text-align: center;
 
-                color: #e74c3c;
+                color: $red;
               }
             }
             .button {
@@ -5500,8 +5570,8 @@ fieldset legend {
               text-align: center;
 
               color: #fff;
-              background-color: #e74c3c;
-              box-shadow: 0 2px 0 #c0392b;
+              background-color: $green;
+              box-shadow: 0 2px 0 $dark;
               &:hover {
                 color: #fff;
                 background: #34495e;
@@ -5548,7 +5618,7 @@ fieldset legend {
                     text-align: center;
 
                     color: #fff;
-                    background-color: #e74c3c;
+                    background-color: $red;
                     box-shadow: 0 2px 0 #c0392b;
                     &:hover {
                       color: #fff;
@@ -5585,7 +5655,7 @@ fieldset legend {
 
                   color: #34495e;
                   &:hover {
-                    color: #e74c3c;
+                    color: $red;
                   }
                 }
               }
@@ -5596,7 +5666,8 @@ fieldset legend {
     }
   }
 }
-//Single page for posts (not woocommerce products)
+
+//Single page for posts (not woocommerce products)//
 .single {
   .wide_layout {
     .page_content_offset {
@@ -5659,7 +5730,7 @@ fieldset legend {
                 width: 17px;
                 height: 10px;
 
-                color: #e74c3c;
+                color: $red;
               }
             }
           }
@@ -5683,10 +5754,11 @@ fieldset legend {
                     text-decoration: none;
                   }
                   img {
+                    width: 100%;
                     max-width: 242px;
                     max-height: 242px;
-                    width: 100%;
-                    border-radius:4px;
+
+                    border-radius: 4px;
                   }
                   h2 {
                     font-size: 16px;
@@ -5698,7 +5770,7 @@ fieldset legend {
 
                     color: #292f38;
                     &:hover {
-                      color: #e74c3c;
+                      color: $red;
                     }
                   }
                   .price {
@@ -5709,7 +5781,7 @@ fieldset legend {
 
                     margin-bottom: 15px;
 
-                    color: #e74c3c;
+                    color: $red;
                     del {
                       font-size: 14px;
 
@@ -5731,8 +5803,8 @@ fieldset legend {
 
                   color: #fff;
                   border-radius: 4px;
-                  background-color: #e74c3c;
-                  box-shadow: 0 2px 0 #c0392b;
+                  background-color: $green;
+                  box-shadow: 0 2px 0 $dark;
                   &:hover {
                     color: #fff;
                     background: #34495e;
@@ -5747,7 +5819,8 @@ fieldset legend {
     }
   }
 }
-//Custom Page
+
+//Custom Page//
 .page {
   .page_content_offset {
     .container {
@@ -5804,7 +5877,7 @@ fieldset legend {
                 width: 17px;
                 height: 10px;
 
-                color: #e74c3c;
+                color: $red;
               }
             }
           }
@@ -5812,9 +5885,10 @@ fieldset legend {
       }
     }
   }
-  .map-container{
+  .map-container {
     iframe {
       width: 100%;
+
       pointer-events: none;
     }
     .clicked {
@@ -5822,7 +5896,8 @@ fieldset legend {
     }
   }
 }
-//Custom category (not woocommece)
+
+//Custom category (not woocommece)//
 .category {
   .wide_layout {
     .container {
@@ -5866,7 +5941,7 @@ fieldset legend {
                   &:hover {
                     text-decoration: none;
 
-                    color: #e74c3c;
+                    color: $red;
                   }
                 }
               }
@@ -5906,7 +5981,7 @@ fieldset legend {
 
                     color: #34495e;
                     &:hover {
-                      color: #e74c3c;
+                      color: $red;
                     }
                   }
                 }
@@ -5918,7 +5993,8 @@ fieldset legend {
     }
   }
 }
-//Comment archive
+
+//Comment archive//
 .post-type-archive {
   .comment-page-wrapper {
     .breadcrumbs {
@@ -5934,6 +6010,7 @@ fieldset legend {
             .col-md-6 {
               width: 47%;
               margin: 10px;
+
               border-radius: 8px;
               background-color: #f1f1f1;
               box-shadow: 0 0 10px rgba(0,0,0,.1);
@@ -5941,6 +6018,7 @@ fieldset legend {
                 padding: 10px;
                 .thumbnail_wrapper {
                   display: block;
+
                   text-align: center;
                   img {
                     border: 5px solid #fff;
@@ -5951,22 +6029,26 @@ fieldset legend {
                   &:hover {
                     text-decoration: none;
                     h3 {
-                      color: #e74c3c;
+                      color: $red;
                     }
                   }
                   h3 {
                     font-size: 18px;
+
                     padding: 10px;
+
                     color: #000;
                   }
                 }
                 .comment_date {
                   font-size: 13px;
+
                   color: #b71919;
                 }
                 .comment_content_wrapp {
                   p {
                     font-size: 13px;
+
                     color: #707070;
                   }
                 }
@@ -5979,28 +6061,34 @@ fieldset legend {
             .widget {
               h6 {
                 font-size: 18px;
+
                 padding: 15px 20px 14px;
+
                 color: #fff;
                 border-radius: 4px 4px 0 0;
                 background: #323a45;
               }
               ul {
                 padding: 15px;
+
                 background-color: #fff;
                 box-shadow: 0 0 17px rgba(0,0,0,.12);
                 li {
                   padding: 7px 25px 7px 0;
                   padding-left: 20px;
+
                   -webkit-transition: color .4s ease,background-color .3s ease;
-                  transition: color .4s ease,background-color .3s ease;
+                          transition: color .4s ease,background-color .3s ease;
+
                   border-bottom: 1px solid #e2e6e7;
                   a {
                     -webkit-transition: color .3s ease,background-color .3s ease;
-                     transition: color .3s ease,background-color .3s ease;
+                            transition: color .3s ease,background-color .3s ease;
                     text-decoration: none;
+
                     color: #34495e;
                     &:hover {
-                      color: #e74c3c;
+                      color: $red;
                     }
                   }
                 }
@@ -6012,6 +6100,8 @@ fieldset legend {
     }
   }
 }
+
+//КОРЗИНА//
 .cart {
   aside {
     display: none;
@@ -6050,7 +6140,7 @@ fieldset legend {
                 color: #fff !important;
                 background-color: #34495e;
                 &:hover {
-                  color: #e74c3c !important;
+                  color: $red !important;
                 }
               }
             }
@@ -6068,10 +6158,11 @@ fieldset legend {
             .product-name {
               a {
                 font-size: 15px;
-                color: #000;
                 font-weight: 400;
+
+                color: #000;
                 &:hover {
-                  color: #e74c3c;
+                  color: $red;
                 }
               }
             }
@@ -6079,8 +6170,9 @@ fieldset legend {
             .product-subtotal {
               span {
                 font-size: 14px;
-                color: #000;
                 font-weight: 400;
+
+                color: #000;
               }
             }
             .product-quantity {
@@ -6129,17 +6221,18 @@ fieldset legend {
           h2 {
             margin-bottom: 20px;
             padding-top: 15px;
+
             color: #292f38;
           }
           .wc-proceed-to-checkout {
             a {
-                color: #fff;
-                background: #34495e;
-                box-shadow: 0 3px 0 #506579;
+              color: #fff;
+              background: #34495e;
+              box-shadow: 0 3px 0 #506579;
               &:hover {
-                 background-color: #e2e6e7;
-              box-shadow: 0 2px 0 #bdc3c7;
-              color:#000;
+                color: #000;
+                background-color: #e2e6e7;
+                box-shadow: 0 2px 0 #bdc3c7;
               }
             }
           }
@@ -6174,6 +6267,8 @@ fieldset legend {
     }
   }
 }
+
+//СТРАНИЦА ОФОРМЛЕНИЯ ЗАКАЗА//
 .checkout {
   aside {
     display: none;
@@ -6292,8 +6387,26 @@ fieldset legend {
       }
     }
   }
+  #create_pdf {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: .5s all ease-out;
+    color: $white;
+    border-radius: 4px;
+    background-color: $green;
+    box-shadow: 0 2px 0 #537d61;
+    &:hover {
+      color: $green;
+      background-color: $pale-black;
+      box-shadow: 0 2px 0 $dark;
+    }
+  }
 }
 
+//PAGE 404//
 .error404 {
   article {
     height: 300px;
@@ -6324,6 +6437,7 @@ fieldset legend {
   }
 }
 
+//СТРАНИЦА ТОВАРА//
 .single-product {
   #container {
     #content {
@@ -6360,10 +6474,11 @@ fieldset legend {
             text-decoration: none;
           }
           img {
+            width: 100%;
             max-width: 242px;
             max-height: 242px;
-            width: 100%;
-            border-radius:4px;
+
+            border-radius: 4px;
           }
           h2 {
             font-size: 16px;
@@ -6375,7 +6490,7 @@ fieldset legend {
 
             color: #292f38;
             &:hover {
-              color: #e74c3c;
+              color: $red;
             }
           }
           .price {
@@ -6386,7 +6501,7 @@ fieldset legend {
 
             margin-bottom: 15px;
 
-            color: #e74c3c;
+            color: $red;
             del {
               font-size: 14px;
 
@@ -6406,11 +6521,11 @@ fieldset legend {
           text-align: center;
 
           color: #fff;
-          background-color: #e74c3c;
-          box-shadow: 0 2px 0 #c0392b;
+          background: $green;
+          box-shadow: 0 2px 0 $dark;
           &:hover {
             color: #fff;
-            background: #34495e;
+            background: lighten(#34495e, 10%);
             box-shadow: 0 2px 0 #34495e;
           }
         }
@@ -6419,6 +6534,7 @@ fieldset legend {
   }
 }
 
+//ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ГОАВНОЙ СТРАНИЦЫ//
 .home {
   #owl-demo {
     display: block !important;
@@ -6444,6 +6560,7 @@ fieldset legend {
           color: #fff;
         }
         .slider-button {
+          font-family: Leksa;
           font-size: 20px;
 
           position: absolute;
@@ -6457,10 +6574,10 @@ fieldset legend {
           text-transform: uppercase;
 
           opacity: 0;
-          color: #fff;
+          color: $green;
           border-radius: 4px;
-          background-color: #e74c3c;
-          box-shadow: 0 2px 0 #c0392b;
+          background-color: $yellow;
+          box-shadow: 0 2px 0 #a79a01;
           &:hover {
             cursor: pointer;
             text-decoration: none;
@@ -6490,15 +6607,16 @@ fieldset legend {
 #msMiniCart {
   li {
     padding: 9px 16px;
-
     border-radius: 4px;
-    background-color: #e74c3c;
+    background-color: $green;
+    box-shadow: 0 2px 0 #537d61;
     &:hover {
       background-color: #34495e;
+      box-shadow: 0 2px 0 $pale-black;
       a {
         i {
           .items-count {
-            background-color: #e74c3c;
+            background-color: $red;
           }
         }
       }
@@ -7301,8 +7419,8 @@ fieldset legend {
 
       text-transform: none;
 
-      color: #e74c3c;
-      border: 1px solid #e74c3c;
+      color: $red;
+      border: 1px solid $red;
       border-radius: 4px;
       background: #fff;
     }
@@ -7740,7 +7858,7 @@ fieldset legend {
 
         color: #fff;
         border-radius: 4px;
-        background: #e74c3c;
+        background: $red;
       }
     }
     &:last-child {
@@ -7750,11 +7868,11 @@ fieldset legend {
         }
       }
       a {
-        color: #e74c3c;
+        color: $green;
       }
     }
     a {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
 
       text-align: center;
@@ -7776,7 +7894,7 @@ fieldset legend {
       transform: translateY(35px);
 
       opacity: 0;
-      border-top: 3px solid #e74c3c;
+      border-top: 3px solid $red;
       background: #fff;
       box-shadow: 0 1px 2px rgba(0,0,0,.15);
       li {
@@ -7805,7 +7923,7 @@ fieldset legend {
           a {
             width: 100%;
 
-            color: #e74c3c;
+            color: $red;
             background: inherit;
           }
         }

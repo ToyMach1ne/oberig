@@ -1,0 +1,2 @@
+!function(){function t(){n().then(function(t){var n=new jsPDF({unit:"px",format:"a4"});n.save("techumber-html-to-pdf.pdf"),e.width(o)})}function n(){return e.width(1.33333*i[0]-80).css("max-width","none"),html2canvas(e,{imageTimeout:2e3,removeContainer:!0})}var e=$(".order_details"),o=e.width(),i=[595.28,841.89];$("#create_pdf").on("click",function(){$("body").scrollTop(0),t()})}();
+//# sourceMappingURL=maps/app.js.map

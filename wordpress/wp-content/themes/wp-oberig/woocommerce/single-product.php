@@ -39,11 +39,12 @@ get_header( 'shop' ); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
+<!-- RELATED PRODUCTS -->
 <div class="container">
   <?php $posts = get_field('popular_products', 30); ?>
-<?php if( $posts ): ?>
+  <?php if( $posts ): ?>
   <div class="related products">
-  <h2><?php _e( 'ПОПУЛЯРНЫЕ ТОВАРЫ', 'woocommerce' ); ?></h2>
+    <h2><?php _e( 'ПОПУЛЯРНЫЕ ТОВАРЫ', 'woocommerce' ); ?></h2>
     <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
         <?php setup_postdata($post); ?>
         <div class="product_item isotope-item col-md-3">
@@ -69,13 +70,15 @@ get_header( 'shop' ); ?>
             $product ); ?>
           </figure>
         </div><!-- product_item -->
-    <?php endforeach; ?>
+        <?php endforeach; ?>
     </div><!-- related products -->
     <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-<?php endif; ?>
+    <?php endif; ?>
+    <!-- Возврат в категорию -->
     <?php echo $product->get_categories( ', ', '<span class="posted_in"><i class="fa fa-reply m_left_5 m_right_10 f_size_large"></i>' . _n( 'В категорию', 'В категорию', $cat_count, 'woocommerce' ) . ' ', '</span>' ); ?>
-</div>
-
+    <!-- Возврат в категорию -->
+</div><!-- container -->
+<!-- RELATED PRODUCTS -->
 
 	<?php
 		/**

@@ -676,6 +676,7 @@ function disable_emojicons_tinymce( $plugins ) {
   }
 }
 
+//Theme support for woocommerce//
 add_theme_support( 'woocommerce' );
 
 
@@ -713,7 +714,7 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_upse
 }
 
 
-// ADD UKRANIAN MONEY
+// ADD UKRANIAN MONEY//
 add_filter( 'woocommerce_currencies', 'add_my_currency' );
 function add_my_currency( $currencies ) {
   $currencies['ABC'] = __( 'Українська гривня', 'woocommerce' );
@@ -728,47 +729,38 @@ function add_my_currency_symbol( $currency_symbol, $currency ) {
 }
 
 
-
+// Change woocommerce button text//
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
-
 function woo_custom_cart_button_text() {
-
-        return __( 'Добавить в корзину', 'woocommerce' );
-
+ return __( 'Добавить в корзину', 'woocommerce' );
 }
 
 add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );    // 2.1 +
-
 function woo_archive_custom_cart_button_text() {
-
         return __( 'Добавить в корзину', 'woocommerce' );
-
 }
 
 
 //add to cart after ajax quantity
 add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
-                global $woocommerce;
-                ob_start(); ?>
-                <a class="your-class-name" href="/cart.htm" title="<?php _e('Корзина', 'woothemes'); ?>">
-                  <i class="fa fa-shopping-cart">
-                    <span class="items-count">
-                      <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
-                    </span>
-                  </i>
-                  <?php echo $woocommerce->cart->get_cart_total(); ?>
-                </a>
-                <?php $fragments['a.your-class-name'] = ob_get_clean();
-                return $fragments;
+  global $woocommerce; ob_start(); ?>
+   <a class="your-class-name" href="/cart.htm" title="<?php _e('Корзина', 'woothemes'); ?>">
+     <i class="fa fa-shopping-cart">
+      <span class="items-count">
+       <?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+      </span>
+    </i>
+    <?php echo $woocommerce->cart->get_cart_total(); ?>
+  </a>
+  <?php $fragments['a.your-class-name'] = ob_get_clean();
+  return $fragments;
 }
-
 
 
 //Comment post type
 add_action( 'init', 'post_type_comment' );
 function post_type_comment() {
-
   $labels = array(
     'name' => 'Комментарий',
     'singular_name' => 'Комментарий',

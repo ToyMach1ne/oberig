@@ -1295,12 +1295,12 @@ if (typeof jQuery === 'undefined') {
 
 })(jQuery);
 
-
+//add class for isotope items//
 $(".home .products_container .product_item:nth-child(3n+2)").addClass("hit")
 $(".home .products_container .product_item:nth-child(3n+1)").addClass("new")
 $(".home .products_container .product_item:nth-child(3n)").addClass("specials")
 
-
+//REMOVE BOOTSTRAP CLASS ON ARCHIVE PAGE//
 $(document).ready(function() {
     if ($('.archive').hasClass("home")) {
         $('.products_container').removeClass('col-md-9');
@@ -1320,7 +1320,7 @@ $(document).ready(function() {
 
 });
 
-
+//OWL SETTINGS//
 $(document).ready(function() {
     var owl = $("#owl-demo");
     owl.owlCarousel({
@@ -1334,7 +1334,7 @@ $(document).ready(function() {
         loop: true,
         autoplay: true,
         autoplayTimeout: 4500,
-        items: 1,
+        items: 5,
 
     })
 
@@ -1375,9 +1375,59 @@ $(".tabs li").click(function(e) {
 });
 
 $('.map-container')
-  .click(function(){
-      $(this).find('iframe').addClass('clicked')})
-  .mouseleave(function(){
-      $(this).find('iframe').removeClass('clicked')});
+    .click(function() {
+        $(this).find('iframe').addClass('clicked')
+    })
+    .mouseleave(function() {
+        $(this).find('iframe').removeClass('clicked')
+    });
 //END ADD CLASS TO PRODUCT TABS//
+
+//CHECKOUT PAGE TO PDF//
+(function() {
+    var
+        form = $('.woocommerce'),
+        cache_width = form.width(),
+        a4 = [595.28, 841.89]; // for a4 size paper width and height
+
+    $('#create_pdf').on('click', function() {
+        $('body').scrollTop(0);
+        createPDF();
+    });
+    //create pdf
+    function createPDF() {
+        getCanvas().then(function(canvas) {
+            var
+                img = canvas.toDataURL("image/png"),
+                doc = new jsPDF({
+                    unit: 'px',
+                    format: 'a4'
+                });
+            doc.addImage(img, 'JPEG', 20, 20);
+            doc.save('techumber-html-to-pdf.pdf');
+            form.width(cache_width);
+        });
+    }
+
+    // create canvas object
+    function getCanvas() {
+        form.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
+        return html2canvas(form, {
+            imageTimeout: 2000,
+            removeContainer: true
+        });
+    }
+
+}());
+
+
+
+//Show and hide phones
+$('.show_phone').on('click', function() {
+          $('.st_xs_align_c').addClass('st_xs_align_c--opened')
+        });
+$('.hidden_phone').on('click', function() {
+          $('.st_xs_align_c--opened').removeClass('st_xs_align_c--opened')
+        });
+
 

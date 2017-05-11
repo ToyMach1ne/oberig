@@ -27,15 +27,20 @@
       <!--header bottom part-->
       <section class="h_bot_part type_2 container">
           <div class="clearfix row">
+
               <div class="col-lg-4 col-md-5 col-sm-4 t_align_c st_xs_align_c">
-                  <p>&nbsp;</p>
-                  <a href="tel:<?php the_field('header_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('header_phone', 30); ?></a>
-                  <p>&nbsp;</p>
+                <a href="tel:<?php the_field('header_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('header_phone', 30); ?></a>
+                <a href="tel:<?php the_field('second_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('second_phone', 30); ?></a>
+                <a href="tel:<?php the_field('third_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('third_phone', 30); ?></a>
+                <span class="show_phone"><i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-down go_down" aria-hidden="true"></i></span>
+                <span class="hidden_phone"><i class="fa fa-angle-up" aria-hidden="true"></i><i class="fa fa-angle-up rise_up" aria-hidden="true"></i></span>
               </div>
+
+
               <div class="col-lg-8 col-md-7 col-sm-8 clearfix t_xs_align_c">
                   <div class="relative f_left">
                     <a href="<?php echo home_url(); ?>" class="logo m_xs_bottom_10 d_inline_b">
-                      <img src="<?php echo get_template_directory_uri(); ?>/img/logo_true.png" width="350" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
+                      <img src="<?php echo get_template_directory_uri(); ?>/img/logo_big_2.png" width="350" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>">
                     </a>
                   </div><!-- relative f_left -->
                   <ul id="msMiniCart" class="d_inline_b horizontal_list clearfix t_align_l f_right f_xs_none site_settings">
@@ -52,8 +57,8 @@
                       </li>
                     </ul>
                   </div>
-                </div>
-              </section>
+                </div><!-- row -->
+              </section><!-- h_bot_part -->
               <!--main menu container-->
 
               <section class="menu_wrap type_3 relative">

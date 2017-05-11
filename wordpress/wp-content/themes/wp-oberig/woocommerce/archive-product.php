@@ -21,18 +21,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<div id="owl-demo" class="owl-carousel owl-theme">
-  <?php if( have_rows('slider', 30) ): ?>
-    <?php while( have_rows('slider', 30) ): the_row();
-      // vars
-      $image = get_sub_field('slider_img'); ?>
-    <div class="item">
-      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
-      <h6 id="slider-title" class="slider-text"><?php the_sub_field('slider_text'); ?></h6>
-      <a id="slider-click" class="slider-button">Смотреть</a>
-    </div>
-    <?php endwhile; endif; ?>
-</div>
+  <!-- Слайдер на главной -->
+  <div id="owl-demo" class="owl-carousel owl-theme">
+    <?php if( have_rows('slider', 30) ): ?>
+      <?php while( have_rows('slider', 30) ): the_row(); ?>
+        <?php
+$image = get_sub_field('slider_img');
+
+if( !empty($image) ):
+
+  // vars
+  $url = $image['url'];
+  $title = $image['title'];
+  $alt = $image['alt'];
+
+  // thumbnail
+  $size = 'small';
+  $thumb = $image['sizes'][ $size ]; ?>
+      <div class="item">
+        <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
+      </div>
+          <?php endif; ?>
+      <?php endwhile; endif; ?>
+
+  </div><!-- owl-demo -->
+  <!-- Слайдер на главной -->
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -43,9 +56,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
 			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
-
 		<?php endif; ?>
 
 		<?php
@@ -57,7 +68,7 @@ get_header( 'shop' ); ?>
 			 */
 			do_action( 'woocommerce_archive_description' );
 		?>
-
+          <!-- ТАБЫ ДЛЯ ИЗОТОПА -->
                 <ul class="horizontal_list clearfix tt_uppercase isotope_menu f_size_ex_large">
                     <li class="active m_right_5 m_bottom_10 m_xs_bottom_5 animate_ftr animate_horizontal_finished">
                         <button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter="*">Все</button>
@@ -72,10 +83,12 @@ get_header( 'shop' ); ?>
                         <button class="button_type_2 bg_light_color_1 r_corners tr_delay_hover tt_uppercase box_s_none" data-filter=".hit">Хит продаж</button>
                     </li>
                 </ul>
+           <!-- ТАБЫ ДЛЯ ИЗОТОПА -->
+
+           <!-- ТОВАРЫ МАГАЗИНА -->
           <div class="archive-wrapper">
             <section class="products_container clearfix m_bottom_25 m_sm_bottom_15 isotope col-lg-9 col-md-9 col-sm-9">
               <?php if ( have_posts() ) : ?>
-
                 <?php
                   /**
                    * woocommerce_before_shop_loop hook.
@@ -107,24 +120,13 @@ get_header( 'shop' ); ?>
                   do_action( 'woocommerce_after_shop_loop' );
                 ?>
 
-
               <?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
                 <?php wc_get_template( 'loop/no-products-found.php' ); ?>
-
               <?php endif; ?>
 
-          </section>
-
-          <aside class="col-lg-3 col-md-3 col-sm-3 sidebar-right">
-                          <!--widgets-->
-                           <?php if ( is_active_sidebar('widgetarea2') ) : ?>
-                              <?php dynamic_sidebar( 'widgetarea2' ); ?>
-                           <?php endif; ?>
-                          <!--banner-->
-          </aside>
+            </section>
           </div><!-- archive-wrapper -->
-
+          <!-- ТОВАРЫ МАГАЗИНА -->
 
 	<?php
 		/**
