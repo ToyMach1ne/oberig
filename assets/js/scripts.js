@@ -1332,10 +1332,23 @@ $(document).ready(function() {
         paginationSpeed: 400,
         singleItem: true,
         loop: true,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 4500,
         items: 5,
-
+         responsive:{
+        0 : {
+            items:1,
+        },
+        740 : {
+            items:2,
+        },
+        1180 : {
+            items:3,
+        },
+        1200 : {
+            items:5,
+        }
+    }
     })
 
     owl.on('changed.owl.carousel', function(event) {
