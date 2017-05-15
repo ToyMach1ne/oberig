@@ -4644,7 +4644,11 @@ fieldset legend {
               color:#fff;
               font-size: 30px;
               margin-bottom: 25px;
-              h4 {
+              background-image: url(../img/green_line1.png);
+              background-repeat: no-repeat;
+              background-position: right;
+              background-size: contain;
+                  h4 {
                 line-height: 1;
               }
           }
@@ -6617,8 +6621,7 @@ fieldset legend {
     }
     aside {
       float: right;
-
-      margin-top: -150px;
+      margin-top: -130px;
     }
   }
 }
@@ -8253,6 +8256,11 @@ fieldset legend {
       }
     }
   }
+  .error404 {
+    .social_widgets {
+      right: 0;
+    }
+  }
 }
 
 @media (max-width: 988px) {
@@ -8624,6 +8632,14 @@ fieldset legend {
           }
         }
       }
+    }
+  }
+  .error404 {
+    article {
+      text-align: center;
+    .sidebar-right {
+      display: none;
+    }
     }
   }
 }
