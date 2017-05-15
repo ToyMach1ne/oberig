@@ -28,7 +28,7 @@
       <section class="h_bot_part type_2 container">
           <div class="clearfix row">
 
-              <div class="col-lg-4 col-md-5 col-sm-4 t_align_c st_xs_align_c">
+              <div class="col-lg-4 col-md-5 col-sm-4 t_align_c st_xs_align_c header_visibillity">
                 <a href="tel:<?php the_field('header_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('header_phone', 30); ?></a>
                 <a href="tel:<?php the_field('second_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('second_phone', 30); ?></a>
                 <a href="tel:<?php the_field('third_phone', 30); ?>" class="f_size_big default_t_color"><?php the_field('third_phone', 30); ?></a>

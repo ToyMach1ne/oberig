@@ -22,8 +22,8 @@
        <!-- Популярные товары -->
        <?php $posts = get_field('popular_products', 30); ?>
        <?php if( $posts ): ?>
+       <h2><?php _e( 'ПОПУЛЯРНЫЕ ТОВАРЫ', 'woocommerce' ); ?></h2>
       <div class="related products">
-      <h2><?php _e( 'ПОПУЛЯРНЫЕ ТОВАРЫ', 'woocommerce' ); ?></h2>
         <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
             <?php setup_postdata($post); ?>
             <div class="product_item isotope-item col-md-3">

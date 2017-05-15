@@ -78,6 +78,7 @@
                <div class="clearfix m_bottom_10">
                  <i class="fa fa-envelope f_left"></i>
                  <a class="contact_e color_light" href="mailto:flowers@vidumki.ru"><?php the_field('email', 36); ?></a>
+                 <a class="contact_e color_light" href="mailto:mail@oberig.vn.ua"><?php the_field('second_email', 36); ?></a>
                </div>
              </li>
          </ul><!-- c_info_list -->
@@ -100,7 +101,7 @@
               <span class="tooltip tr_all_hover r_corners color_dark f_size_small">В контакте</span>
               <a href="#" class="r_corners t_align_c tr_delay_hover f_size_ex_large"><i class="fa fa-vk"></i></a>
             </li>
-            <li class="envelope m_left_5 m_bottom_5 relative">
+            <li class="envelope relative">
               <span class="tooltip tr_all_hover r_corners color_dark f_size_small">Контакты</span>
               <a href="#" class="r_corners f_size_ex_large t_align_c tr_delay_hover"><i class="fa fa-envelope-o"></i></a>
             </li>

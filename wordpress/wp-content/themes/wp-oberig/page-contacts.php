@@ -35,6 +35,7 @@
                             <div class="clearfix m_bottom_10">
                                 <i class="fa fa-envelope f_left"></i>
                                 <a class="contact_e default_t_color" href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
+                                <a class="contact_e default_t_color" href="mailto:mail@oberig.vn.ua"><?php the_field('second_email'); ?></a>
                             </div>
                         </li>
                     </ul>
