@@ -1,4 +1,5 @@
 <?php /* Template Name: Контакты */ get_header(); ?>
+   <?php get_template_part('slider-main'); ?>
 <section class="breadcrumbs">
     <div class="container">
       <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
@@ -16,7 +17,7 @@
                             <h2 class="tt_uppercase color_dark m_bottom_25"><?php the_title(); ?></h2>
                         </div>
                     </div>
-                    <h1>Адрес магазина:</h1>
+                    <h1>Адрес:</h1>
                     <br>
                     <ul class="c_info_list">
                         <li class="m_bottom_10">
@@ -43,8 +44,6 @@
                     <br>
                     <br>
                     <br> &nbsp;
-                    <h1>Реквизиты</h1>
-                    <br><?php the_field('rekvizity'); ?>
                 </article><!-- m_bottom_15 -->
             </section>
             <!--right column-->

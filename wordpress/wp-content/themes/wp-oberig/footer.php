@@ -114,46 +114,6 @@
   </div><!-- footer_bottom_part -->
 </footer><!-- footer -->
 
-    <ul class="social_widgets d_xs_none">
-      <li class="relative">
-        <button class="sw_button t_align_c vk"><i class="fa fa-vk"></i></button>
-        <div class="sw_content"></div>
-      </li>
-      <!--facebook-->
-      <li class="relative">
-        <button class="sw_button t_align_c facebook"><i class="fa fa-facebook"></i></button>
-        <div class="sw_content">
-          <h3 class="color_dark m_bottom_20">Мы на Facebook</h3>
-        </div>
-      </li>
-      <!--contact info-->
-      <li class="relative">
-        <button class="sw_button t_align_c googlemap"><i class="fa fa-map-marker"></i></button>
-        <div class="sw_content">
-          <h3 class="color_dark m_bottom_20">Адрес магазина</h3>
-          <ul class="c_info_list">
-            <li class="m_bottom_10">
-              <div class="clearfix m_bottom_15">
-                <i class="fa fa-map-marker f_left"></i>
-                <p class="contact_e"><?php the_field('adress', 36); ?></p>
-              </div>
-            </li>
-            <li class="m_bottom_10">
-              <div class="clearfix m_bottom_10">
-                <i class="fa fa-phone f_left"></i>
-                <p class="contact_e"><?php the_field('phone', 36); ?></p>
-              </div>
-            </li>
-            <li class="m_bottom_10">
-              <div class="clearfix m_bottom_10">
-                <i class="fa fa-envelope f_left"></i>
-                <a class="contact_e default_t_color" href="mailto:flowers@vidumki.ru"><?php the_field('email', 36); ?></a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
     <!--custom popup-->
     <div class="popup_wrap d_none" id="quick_view_product">
       <section class="popup r_corners shadow"></section>

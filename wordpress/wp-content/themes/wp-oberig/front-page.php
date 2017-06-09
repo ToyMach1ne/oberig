@@ -22,29 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
   <!-- Слайдер на главной -->
-  <div id="owl-demo" class="owl-carousel owl-theme">
-    <?php if( have_rows('slider', 30) ): ?>
-      <?php while( have_rows('slider', 30) ): the_row(); ?>
-        <?php
-$image = get_sub_field('slider_img');
-
-if( !empty($image) ):
-
-  // vars
-  $url = $image['url'];
-  $title = $image['title'];
-  $alt = $image['alt'];
-
-  // thumbnail
-  $size = 'small';
-  $thumb = $image['sizes'][ $size ]; ?>
-      <div class="item">
-        <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" />
-      </div>
-          <?php endif; ?>
-      <?php endwhile; endif; ?>
-
-  </div><!-- owl-demo -->
+  <?php get_template_part('slider-main'); ?>
   <!-- Слайдер на главной -->
   <?php
     /**
@@ -68,6 +46,15 @@ if( !empty($image) ):
        */
       do_action( 'woocommerce_archive_description' );
     ?>
+    <?php
+
+$file = get_field('download_file');
+
+if( $file ): ?>
+
+  <a href="<?php echo $file['url']; ?>"><?php echo $file['filename']; ?></a>
+
+<?php endif; ?>
            <!-- Рубрики -->
           <div class="archive-wrapper">
           <section class="text-wrapper">
@@ -95,6 +82,7 @@ if( !empty($image) ):
                   'hide_empty' => true,
                   'parent' => 0,
                   'hierarchical' => false,
+                  'orderby' => 'name',
                     ) ); ?>
                 <?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
                   foreach ( $terms as $term ) {
@@ -104,14 +92,12 @@ if( !empty($image) ):
                 <div class="col-md-6">
                   <div class="category_item_wrapp">
                     <a href="<?php echo $termlinks; ?>" class="category_link">
-                      <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
                       <h3><?php echo  $term->name; ?></h3>
-                      <h4><?php echo  $term->name; ?></h4>
                       <a href="<?php echo $termlinks; ?>" class="cat_button">Перейти</a>
                     </a>
                   </div>
                   <?php
-                    $term_id = 13;
+                    $term_id = 54;
                     $taxonomy_name = 'product_cat';
                     $term_children = get_term_children( $term_id, $taxonomy_name );
                     echo '<ul class="child_list">';

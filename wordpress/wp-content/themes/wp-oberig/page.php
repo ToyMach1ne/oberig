@@ -1,4 +1,5 @@
 <?php /* Template Name: О нас */ get_header(); ?>
+   <?php get_template_part('slider-main'); ?>
 <section class="breadcrumbs">
     <div class="container">
       <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
