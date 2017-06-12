@@ -43,7 +43,14 @@ if (!defined('ABSPATH'))
     {
         $woof_settings[$key]['behavior'] = 'title';
     }
-
+     if (!isset($woof_settings[$key]['search_by_full_word']))
+    {
+        $woof_settings[$key]['search_by_full_word'] = 0;
+    }
+         if (!isset($woof_settings[$key]['sku_compatibility']))
+    {
+        $woof_settings[$key]['sku_compatibility'] = 0;
+    }
     if (!isset($woof_settings[$key]['autocomplete']))
     {
         $woof_settings[$key]['autocomplete'] = 0;
@@ -69,11 +76,12 @@ if (!defined('ABSPATH'))
     <input type="hidden" name="woof_settings[<?php echo $key ?>][title]" value="<?php echo $woof_settings[$key]['title'] ?>" />
     <input type="hidden" name="woof_settings[<?php echo $key ?>][placeholder]" value="<?php echo $woof_settings[$key]['placeholder'] ?>" />
     <input type="hidden" name="woof_settings[<?php echo $key ?>][behavior]" value="<?php echo $woof_settings[$key]['behavior'] ?>" />
+    <input type="hidden" name="woof_settings[<?php echo $key ?>][search_by_full_word]" value="<?php echo $woof_settings[$key]['search_by_full_word'] ?>" />
     <input type="hidden" name="woof_settings[<?php echo $key ?>][autocomplete]" value="<?php echo $woof_settings[$key]['autocomplete'] ?>" />
     <input type="hidden" name="woof_settings[<?php echo $key ?>][post_links_in_autocomplete]" value="<?php echo $woof_settings[$key]['post_links_in_autocomplete'] ?>" />
     <input type="hidden" name="woof_settings[<?php echo $key ?>][how_to_open_links]" value="<?php echo $woof_settings[$key]['how_to_open_links'] ?>" />
     <input type="hidden" name="woof_settings[<?php echo $key ?>][image]" value="<?php echo $woof_settings[$key]['image'] ?>" />
-
+    <input type="hidden" name="woof_settings[<?php echo $key ?>][sku_compatibility]" value="<?php echo $woof_settings[$key]['sku_compatibility'] ?>" />
     
     <div id="woof-modal-content-by_text" style="display: none;">
 
@@ -139,7 +147,33 @@ if (!defined('ABSPATH'))
             </div>
 
         </div>
+ <div class="woof-form-element-container">
 
+            <div class="woof-name-description">
+                <strong><?php _e('Search by full word only', 'woocommerce-products-filter') ?></strong>
+                <span><?php _e('The result is only with the full coincidence of words', 'woocommerce-products-filter') ?></span>
+            </div>
+
+            <div class="woof-form-element">
+                <?php
+                $autocomplete = array(
+                    0 => __('No', 'woocommerce-products-filter'),
+                    1 => __('Yes', 'woocommerce-products-filter')
+                );
+                ?>
+
+                <div class="select-wrap">
+                    <select class="woof_popup_option" data-option="search_by_full_word">
+                        <?php foreach ($autocomplete as $key => $value) : ?>
+                            <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+         
 
         <div class="woof-form-element-container">
 
@@ -214,6 +248,32 @@ if (!defined('ABSPATH'))
                 <div class="select-wrap">
                     <select class="woof_popup_option" data-option="how_to_open_links">
                         <?php foreach ($how_to_open_links as $key => $value) : ?>
+                            <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+	
+	<div class="woof-form-element-container">
+
+            <div class="woof-name-description">
+                <strong><?php _e('+SKU ', 'woocommerce-products-filter') ?></strong>
+                <span><?php _e('Activates the ability to search by SKU from the same text-input', 'woocommerce-products-filter') ?></span>
+            </div>
+
+            <div class="woof-form-element">
+                <?php
+                $autocomplete = array(
+                    0 => __('No - filtering by SKU is in the premium version only', 'woocommerce-products-filter'),
+                );
+                ?>
+
+                <div class="select-wrap">
+                    <select class="woof_popup_option" data-option="sku_compatibility">
+                        <?php foreach ($autocomplete as $key => $value) : ?>
                             <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
                         <?php endforeach; ?>
                     </select>

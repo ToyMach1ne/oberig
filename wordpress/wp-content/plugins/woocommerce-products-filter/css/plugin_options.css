@@ -42,7 +42,7 @@ svg:not(:root) { overflow: hidden; }
 .woof-control .select-wrap,
 .woof-control select
 {
-    width: 100%;
+    width: 100% !important;
 }
 
 .woof-upload-style-wrap input[type="text"] {
@@ -111,7 +111,7 @@ nav ul {  display: block; }
 .woof-section textarea,
 .woof-section select
 {
-    margin-bottom: 0;
+    margin-bottom: 3px;
     padding: 6px 8px;
     height: auto;
     border-color: #bababa;
@@ -903,20 +903,15 @@ input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s eas
 input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
 
 
-
-
-
-.woof_premium_only{
-    color:red !important;
+.button.woof_toggle_colors{
+    margin: 9px 0 0 35px !important;
 }
 
-label[for=woof_filter_btn_txt],
-label[for=woof_reset_btn_txt],label[for=swoof_search_slug],
-label[for=woof_hide_dynamic_empty_pos],label[for=hide_terms_count_txt]
-{
-    color:red;
+.button.woof_toggle_images{
+    margin: 9px 0 0 35px !important;
 }
 
-
-
+.woof-button.woof_select_image{
+    margin-left: 0;
+}
 

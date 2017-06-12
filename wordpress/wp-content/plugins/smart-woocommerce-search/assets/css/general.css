@@ -98,7 +98,6 @@
 	content: '\e800';
 	-webkit-transition: color .25s ease;
 	transition: color .25s ease;
-  color: #e74b3b;
 }
 
 /* results */
@@ -154,7 +153,7 @@
 .smart-search-post-icon {
 	max-width: 100%;
 	margin-bottom: 10px;
-	float:left;
+	float: left;
 	margin-right: 10px;
 	line-height: 1;
 }
@@ -185,6 +184,15 @@
 .smart-search-post-date {
 	font-size: 12px;
 	color: #333;
+}
+
+.smart-search-post-price {
+	float: left;
+}
+
+.smart-search-post-sku {
+	float: right;
+	font-size: 12px;
 }
 
 .smart-search-clear {
@@ -275,7 +283,7 @@
 }
 
 .smart-search-view-all-holder > a {
-	display: block;
+	display: block !important;
 	height: 30px;
 	line-height: 30px;
 	background: #ccc;

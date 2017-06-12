@@ -798,4 +798,18 @@ function post_type_comment() {
   register_post_type( 'comment' , $args );
 }
 
+//DELETE CHECKOUT FIELDS//
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+function custom_override_checkout_fields( $fields ) {
+      unset($fields['billing']['billing_company']);
+      unset($fields['billing']['billing_country']);
+      $fields['order']['order_comments']['placeholder'] = 'Примечания к Вашему заказу';
+    return $fields;
+}
+
+
+
 ?>
+

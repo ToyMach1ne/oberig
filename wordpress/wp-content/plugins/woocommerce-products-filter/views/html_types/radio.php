@@ -8,7 +8,7 @@ $_REQUEST['hide_terms_count_txt'] = 0;
 if (!function_exists('woof_draw_radio_childs'))
 {
 
-    function woof_draw_radio_childs($taxonomy_info, $tax_slug, $term_id, $childs, $show_count, $show_count_dynamic, $hide_dynamic_empty_pos)
+    function woof_draw_radio_childs($taxonomy_info, $tax_slug, $term_id, $childs, $show_count, $show_count_dynamic, $hide_dynamic_empty_pos, $parent_is_selected)
     {
 
         $do_not_show_childs = (int) apply_filters('woof_terms_where_hidden_childs', $term_id);
@@ -51,7 +51,7 @@ if (!function_exists('woof_draw_radio_childs'))
         $childs = apply_filters('woof_sort_terms_before_out', $childs, 'radio');
         ?>
         <?php if (!empty($childs)): ?>
-            <ul class="woof_childs_list woof_childs_list_<?php echo $term_id ?>" <?php if ($hide_childs == 1): ?>style="display: none;"<?php endif; ?>>
+            <ul class="woof_childs_list woof_childs_list_<?php echo $term_id ?>" <?php if ($hide_childs == 1 AND !$parent_is_selected): ?>style="display: none;"<?php endif; ?>>
                 <?php foreach ($childs as $term) : $inique_id = uniqid(); ?>
                     <?php
                     $count_string = "";
@@ -96,11 +96,11 @@ if (!function_exists('woof_draw_radio_childs'))
                             else
                                 echo $term['name'];
                             ?><?php echo $count_string ?></label>
-                        <a href="#" name="<?php echo $tax_slug ?>" data-term-id="<?php echo $term['term_id'] ?>" style="<?php if (!in_array($term['slug'], $current_request)): ?>display: none;<?php endif; ?>" class="woof_radio_term_reset <?php if (in_array($term['slug'], $current_request)): ?>woof_radio_term_reset_visible<?php endif; ?> woof_radio_term_reset_<?php echo $term['term_id'] ?>"><img src="<?php echo WOOF_LINK ?>img/delete.png" height="12" width="12" alt="" /></a>
+                        <a href="#" data-name="<?php echo $tax_slug ?>" data-term-id="<?php echo $term['term_id'] ?>" style="<?php if (!in_array($term['slug'], $current_request)): ?>display: none;<?php endif; ?>" class="woof_radio_term_reset <?php if (in_array($term['slug'], $current_request)): ?>woof_radio_term_reset_visible<?php endif; ?> woof_radio_term_reset_<?php echo $term['term_id'] ?>"><img src="<?php echo WOOF_LINK ?>img/delete.png" height="12" width="12" alt="" /></a>
                         <?php
                         if (!empty($term['childs']))
                         {
-                            woof_draw_radio_childs($taxonomy_info, $tax_slug, $term['term_id'], $term['childs'], $show_count, $show_count_dynamic, $hide_dynamic_empty_pos);
+                            woof_draw_radio_childs($taxonomy_info, $tax_slug, $term['term_id'], $term['childs'], $show_count, $show_count_dynamic, $hide_dynamic_empty_pos,in_array($term['slug'], $current_request));
                         }
                         ?>
                         <input type="hidden" value="<?php echo $term['name'] ?>" data-anchor="woof_n_<?php echo $tax_slug ?>_<?php echo $term['slug'] ?>" />
@@ -204,12 +204,12 @@ if (!function_exists('woof_draw_radio_childs'))
                         echo $term['name'];
                     ?><?php echo $count_string ?></label>
 
-                <a href="#" name="<?php echo $tax_slug ?>" data-term-id="<?php echo $term['term_id'] ?>" style="<?php if (!in_array($term['slug'], $current_request)): ?>display: none;<?php endif; ?>" class="woof_radio_term_reset  <?php if (in_array($term['slug'], $current_request)): ?>woof_radio_term_reset_visible<?php endif; ?> woof_radio_term_reset_<?php echo $term['term_id'] ?>"><img src="<?php echo WOOF_LINK ?>img/delete.png" height="12" width="12" alt="" /></a>
+                <a href="#" data-name="<?php echo $tax_slug ?>" data-term-id="<?php echo $term['term_id'] ?>" style="<?php if (!in_array($term['slug'], $current_request)): ?>display: none;<?php endif; ?>" class="woof_radio_term_reset  <?php if (in_array($term['slug'], $current_request)): ?>woof_radio_term_reset_visible<?php endif; ?> woof_radio_term_reset_<?php echo $term['term_id'] ?>"><img src="<?php echo WOOF_LINK ?>img/delete.png" height="12" width="12" alt="" /></a>
 
                 <?php
                 if (!empty($term['childs']))
                 {
-                    woof_draw_radio_childs($taxonomy_info, $tax_slug, $term['term_id'], $term['childs'], $show_count, $show_count_dynamic, $hide_dynamic_empty_pos);
+                    woof_draw_radio_childs($taxonomy_info, $tax_slug, $term['term_id'], $term['childs'], $show_count, $show_count_dynamic, $hide_dynamic_empty_pos, in_array($term['slug'], $current_request));
                 }
                 ?>
                 <input type="hidden" value="<?php echo $term['name'] ?>" data-anchor="woof_n_<?php echo $tax_slug ?>_<?php echo $term['slug'] ?>" />

@@ -1332,7 +1332,7 @@ $(document).ready(function() {
         paginationSpeed: 400,
         singleItem: true,
         loop: true,
-        autoplay: false,
+        autoplay: true,
         autoplayTimeout: 4500,
         items: 5,
          responsive:{

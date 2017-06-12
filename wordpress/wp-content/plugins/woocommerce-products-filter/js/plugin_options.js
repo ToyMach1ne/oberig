@@ -407,25 +407,20 @@ var woof_sort_order = [];
 
 	//***
 	//to avoid logic errors with the count options
-	$('#woof_hide_dynamic_empty_pos').change(function () {
-	    if ($(this).val() == 1) {
-		$('#woof_show_count').val(1);
-		$('#woof_show_count_dynamic').val(1);
-	    }
-	});
+	
 
 	$('#woof_show_count_dynamic').change(function () {
 	    if ($(this).val() == 1) {
 		$('#woof_show_count').val(1);
-	    } else {
-		$('#woof_hide_dynamic_empty_pos').val(0);
 	    }
+	    
+	    
+	    $('#woof_hide_dynamic_empty_pos').val(0);
 	});
 
 	$('#woof_show_count').change(function () {
 	    if ($(this).val() == 0) {
 		$('#woof_show_count_dynamic').val(0);
-		$('#woof_hide_dynamic_empty_pos').val(0);
 	    }
 	});
 

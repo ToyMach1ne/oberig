@@ -1,16 +1,16 @@
 <?php
 /**
  * Plugin Name: Smart WooCommerce Search
- * Plugin URI:  http://yummywp.com/plugin/smart-search
+ * Plugin URI:  https://yummywp.com/plugin/smart-search
  * Description: Smart Search allows you to search any content type on a website, including WooCommerce products
  * Author:      Stanislav S - YummyWP
- * Author URI:  http://yummywp.com
- * Version:     1.1.3
+ * Author URI:  https://yummywp.com
+ * Version:     1.2.2
  * Domain Path: /languages
  * Text Domain: smart_search
  */
 
-define('YSM_VER', 'ysm-1.1.3');
+define('YSM_VER', 'ysm-1.2.2');
 define('YSM_DIR', plugin_dir_path( __FILE__ ));
 define('YSM_URI', plugin_dir_url( __FILE__ ));
 
@@ -159,6 +159,17 @@ function ysm_enqueue_scripts() {
 					'props' => array(
 						'border-color' => $v['settings']['input_border_color'],
 					),
+			));
+		}
+
+		if (!empty( $v['settings']['input_border_width'] )) {
+			Ysm_Style_Generator::add_rule($css_id, array(
+				'selectors' => array(
+					'.search-field[type="search"]',
+				),
+				'props' => array(
+					'border-width' => intval( $v['settings']['input_border_width'] ) . 'px',
+				),
 			));
 		}
 
@@ -379,6 +390,29 @@ function ysm_change_admin_title( $admin_title, $title ) {
 }
 
 add_filter( 'admin_title', 'ysm_change_admin_title', 10, 2 );
+
+/**
+ * Change the admin footer text on Smart Search admin pages.
+ */
+function ysm_change_admin_footer_text( $footer_text ) {
+	$current_screen = get_current_screen();
+	$ysm_screens = array(
+		'toplevel_page_smart-search',
+		'smart-search_page_smart-search-custom',
+		'smart-search_page_smart-search-custom-new',
+	);
+
+	if ( isset( $current_screen->id ) && in_array( $current_screen->id, $ysm_screens ) ) {
+		//if ( ! get_option( 'ysm_admin_footer_text_rate' ) ) {
+			$rate_link = '<a href="https://wordpress.org/support/plugin/smart-woocommerce-search/reviews?rate=5#new-post" target="_blank" id="ysm-rate-plugin">&#9733;&#9733;&#9733;&#9733;&#9733;</a>';
+			$footer_text = sprintf( 'If you like <strong>Smart Search</strong> plugin please leave us a %s rating.', $rate_link );
+		//}
+	}
+
+	return $footer_text;
+}
+
+add_filter( 'admin_footer_text', 'ysm_change_admin_footer_text', 1 );
 
 /**
  * Init Search

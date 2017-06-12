@@ -45,10 +45,11 @@ function woof_init_radios() {
     //***
 
     jQuery('.woof_radio_term_reset').click(function () {
-        woof_radio_direct_search(jQuery(this).data('term-id'), jQuery(this).attr('name'), 0);
+        woof_radio_direct_search(jQuery(this).data('term-id'), jQuery(this).attr('data-name'), 0);
         jQuery(this).parents('.woof_list').find('.checked').removeClass('checked');
         jQuery(this).parents('.woof_list').find('input[type=radio]').removeAttr('checked');
-        jQuery(this).remove();
+        //jQuery(this).remove();
+        jQuery(this).removeClass('woof_radio_term_reset_visible');
         return false;
     });
 }

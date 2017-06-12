@@ -27,3 +27,11 @@ table.woof_sku_table{
     width: 100%;
 }
 
+.woof_authors li{
+    margin-top:5px;
+    list-style-type: none; 
+}
+
+ul.woof_authors{
+    margin: 0 !important;
+}

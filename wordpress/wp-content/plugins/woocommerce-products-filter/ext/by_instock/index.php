@@ -68,7 +68,7 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
         );
     }
 
-    public function assemble_query_params(&$meta_query, &$query = NULL)
+    public function assemble_query_params(&$meta_query, $wp_query = NULL)
     {
         global $WOOF;
         $request = $WOOF->get_request_data();
@@ -202,27 +202,36 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
 
                     if (!empty($prod_attributes_in_request))
                     {
-                        $meta_query = array();
+                         $meta_query = array('relation' => 'AND');
                         $meta_query[] = array(
                             'key' => '_stock_status',
                             'value' => 'outofstock'
                         );
+                         $sub_meta_query=array('relation' => 'OR');
                         $term_in_cycle = array();
+						
                         foreach ($prod_attributes_in_request as $attr_slug)
                         {
+			  //$sub_sub_meta_query=array('relation' => 'AND');
                             $terms = explode(',', $request[$attr_slug]);
-                            if (isset($term_in_cycle[$terms[0]]))
-                            {
-                                $t_name = $term_in_cycle[$terms[0]];
-                            } else
-                            {
-                                $t_name = $term_in_cycle[$terms[0]] = $wpdb->get_var("SELECT name FROM $wpdb->terms WHERE slug = '{$terms[0]}'");
+                            for($i=0;$i<count($terms);$i++){
+
+                                    if (isset($term_in_cycle[$terms[$i]]))
+                                    {
+                                            $t_name = $term_in_cycle[$terms[$i]];
+                                    } else
+                                    {
+                                            $t_name = $term_in_cycle[$terms[$i]] = $wpdb->get_var("SELECT name FROM $wpdb->terms WHERE slug = '{$terms[$i]}'");
+                                    }
+                                    $sub_meta_query[] = array(
+
+                                            'key' => 'attribute_' . $attr_slug,
+                                            'value' =>$t_name
+                                    );
+                                    //echo"<br>***", $t_name,"<br>";
                             }
-                            $meta_query[] = array(
-                                'key' => 'attribute_' . $attr_slug,
-                                'value' => $t_name
-                            );
                         }
+                        $meta_query[]=array($sub_meta_query);
 
                         //if there is price range?
                         //if there is more than 2 meta terms in pa_*

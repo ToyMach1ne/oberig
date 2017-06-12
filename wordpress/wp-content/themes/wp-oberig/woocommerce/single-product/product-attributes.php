@@ -82,3 +82,4 @@ if ( $has_row ) {
 } else {
 	ob_end_clean();
 }
+

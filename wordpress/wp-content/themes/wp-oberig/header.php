@@ -56,6 +56,7 @@
                         </a>
                       </li>
                     </ul>
+                    <?php echo do_shortcode('[smart_search id="1"]'); ?>
                   </div>
                 </div><!-- row -->
               </section><!-- h_bot_part -->

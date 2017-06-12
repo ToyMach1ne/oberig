@@ -12,9 +12,10 @@ wp_enqueue_style('ion.range-slider-skin', WOOF_LINK . 'js/ion.range-slider/css/i
 //***
 $request = $this->get_request_data();
 $uniqid = uniqid();
-$preset_min = WOOF_HELPER::get_min_price();
+$preset_min =WOOF_HELPER::get_min_price();
 $preset_max = WOOF_HELPER::get_max_price();
-$min_price = $this->is_isset_in_request_data('min_price') ? esc_attr($request['min_price']) : $preset_min;
+
+$min_price =$this->is_isset_in_request_data('min_price') ? esc_attr($request['min_price']) : $preset_min;
 $max_price = $this->is_isset_in_request_data('max_price') ? esc_attr($request['max_price']) : $preset_max;
 //***
 if (class_exists('WOOCS'))

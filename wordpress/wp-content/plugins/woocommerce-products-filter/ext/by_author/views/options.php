@@ -42,11 +42,15 @@ if (!defined('ABSPATH'))
     {
         $woof_settings[$key]['role'] = 0;
     }
+    if (!isset($woof_settings[$key]['view']))
+    {
+        $woof_settings[$key]['view'] = 'drop-down';
+    }
     ?>
 
     <input type="hidden" name="woof_settings[<?php echo $key ?>][placeholder]" value="<?php echo $woof_settings[$key]['placeholder'] ?>" />
     <input type="hidden" name="woof_settings[<?php echo $key ?>][role]" value="<?php echo $woof_settings[$key]['role'] ?>" />
-
+    <input type="hidden" name="woof_settings[<?php echo $key ?>][view]" value="<?php echo $woof_settings[$key]['view'] ?>" />
 
     <div id="woof-modal-content-<?php echo $key ?>" style="display: none;">
 
@@ -55,7 +59,7 @@ if (!defined('ABSPATH'))
 
             <div class="woof-name-description">
                 <strong><?php _e('Placeholder text', 'woocommerce-products-filter') ?></strong>
-                <span><?php _e('First drop-down option placeholder text.', 'woocommerce-products-filter') ?></span>
+                <span><?php _e('First drop-down option placeholder text OR title for checkboxes', 'woocommerce-products-filter') ?></span>
             </div>
 
             <div class="woof-form-element">
@@ -86,7 +90,32 @@ if (!defined('ABSPATH'))
             </div>
 
         </div>
+        <div class="woof-form-element-container">
 
+                    <div class="woof-name-description">
+                        <strong><?php _e('View', 'woocommerce-products-filter') ?></strong>
+                        <span><?php _e('View of the search by author ', 'woocommerce-products-filter') ?></span>
+                    </div>
+
+                    <div class="woof-form-element">
+                        <?php
+                        $view = array(
+                            'drop-down' => __('Drop-down', 'woocommerce-products-filter'),
+                            'checkbox' => __('Checkbox', 'woocommerce-products-filter')
+                        );
+                        ?>
+
+                        <div class="select-wrap">
+                            <select class="woof_popup_option" data-option="view">
+                                <?php foreach ($view as $key => $value) : ?>
+                                    <option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
 
 
     </div>

@@ -110,8 +110,7 @@ $tabs = array(
 						ysm_setting( $w_id, 'search_page_default_output', array(
 							'type' => 'checkbox',
 							'title' => __('Default Output on Search Page', 'smart_search'),
-							'description' => __("Display default search output on search results page. 
-											<br>By default the plugin modified search results according to selected options", 'smart_search'),
+							'description' => __("Display default search output on search results page.<br>By default the plugin modified search results according to selected options", 'smart_search'),
 							'value' => 0,
 						));
 
@@ -150,12 +149,12 @@ $tabs = array(
 							'value' => 1,
 						));
 
-						/*ysm_setting( $w_id, 'display_view_all_link', array(
+						ysm_setting( $w_id, 'display_sku', array(
 							'type' => 'checkbox',
-							'title' => __('Display "View all" Link', 'smart_search'),
-							'description' => __('Display a link at the bottom of results popup', 'smart_search'),
-							'value' => '',
-						));*/
+							'title' => __('Display SKU', 'smart_search'),
+							'description' => __('Display product SKU', 'smart_search'),
+							'value' => 1,
+						));
 
 						ysm_setting( $w_id, 'view_all_link_text', array(
 							'type' => 'text',
@@ -245,6 +244,19 @@ $tabs = array(
 
 						?>
 
+						<th class="ysm-widget-settings-th"><?php _e('Restrictions', 'smart_search') ?></th>
+
+						<?php
+
+						ysm_setting( $w_id, 'allowed_product_cat', array(
+							'type' => 'text',
+							'title' => __('Allowed Product Categories', 'smart_search'),
+							'description' => __('Product categories ids separated by comma.<br>Restrict product searching by chosen product categories', 'smart_search'),
+							'value' => '',
+						));
+
+						?>
+
 						</tbody>
 					</table>
 
@@ -272,6 +284,13 @@ $tabs = array(
 								'title' => __('Border Color', 'smart_search'),
 								'description' => __('Search field border color', 'smart_search'),
 								'value' => '',
+							));
+
+							ysm_setting( $w_id, 'input_border_width', array(
+								'type' => 'text',
+								'title' => __('Border Width, px', 'smart_search'),
+								'description' => __('Search field border width in pixels', 'smart_search'),
+								'value' => '1',
 							));
 
 							ysm_setting( $w_id, 'input_text_color', array(

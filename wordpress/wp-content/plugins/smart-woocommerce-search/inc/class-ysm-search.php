@@ -83,6 +83,8 @@ class Ysm_Search
 		unset($registered_pt['attachment']);
 		unset($registered_pt['revision']);
 		unset($registered_pt['nav_menu_item']);
+		unset($registered_pt['custom_css']);
+		unset($registered_pt['customize_changeset']);
 
 		if (ysm_is_woocommerce_active()) {
 			$registered_pt['product'] = 'Product';
@@ -208,6 +210,10 @@ class Ysm_Search
 			self::$fields['post_excerpt'] = 1;
 		}
 
+		if ( !empty( $settings['allowed_product_cat'] ) ) {
+			self::$fields['allowed_product_cat'] = $settings['allowed_product_cat'];
+		}
+
 		if ( !empty( $settings['field_tag'] ) ) {
 			self::$terms['post_tag'] = 'post_tag';
 		}
@@ -251,6 +257,10 @@ class Ysm_Search
 
 		if ( !empty( $settings['display_price'] ) ) {
 			self::$display_opts['display_price'] = 'display_price';
+		}
+
+		if ( !empty( $settings['display_sku'] ) ) {
+			self::$display_opts['display_sku'] = 'display_sku';
 		}
 
 		if ( !empty( $settings['search_page_default_output'] ) ) {
@@ -314,7 +324,7 @@ class Ysm_Search
 				}
 
 				self::$result_post_ids = $wp_posts;
-				$query->set('s', htmlentities( strip_tags( self::$s ) ) );
+				$query->set('s', esc_attr( strip_tags( self::$s ) ) );
 				$query->set('post__in', $wp_posts );
 				$query-> set('orderby' ,'post__in');
 
@@ -363,8 +373,8 @@ class Ysm_Search
 	{
 		global $wpdb;
 
-		self::$s = htmlentities( strip_tags( $s ) );
-		$s = strtolower($s);
+		self::$s = esc_attr( strip_tags( $s ) );
+		$s = mb_strtolower( $s );
 
 		/* SELECT part */
 		$select = array();
@@ -395,8 +405,19 @@ class Ysm_Search
 		$where['and'][] = "p.post_type IN ({$s_post_types})";
 
 		if ( isset(self::$pt['product']) ) {
-			$join['pmpv'] = "LEFT JOIN {$wpdb->postmeta} pmpv ON pmpv.post_id = p.ID";
-			$where['and'][] = "( p.post_type NOT IN ('product') OR (p.post_type = 'product' AND pmpv.meta_key = '_visibility' AND CAST(pmpv.meta_value AS CHAR) IN ('search','visible')) )";
+
+			if ( version_compare( WC()->version, '3.0.0', '<' ) ) {
+				$join['pmpv'] = "LEFT JOIN {$wpdb->postmeta} pmpv ON pmpv.post_id = p.ID";
+				$where['and'][] = "( p.post_type NOT IN ('product') OR (p.post_type = 'product' AND pmpv.meta_key = '_visibility' AND CAST(pmpv.meta_value AS CHAR) IN ('search','visible')) )";
+			} else {
+				$wc_product_visibility_term_ids = wc_get_product_visibility_term_ids();
+				$where['and'][] = sprintf( "p.ID NOT IN (
+					SELECT object_id
+					FROM {$wpdb->term_relationships}
+					WHERE term_taxonomy_id IN (%d)
+				)", $wc_product_visibility_term_ids['exclude-from-search'] );
+			}
+
 		}
 
 		/* relevance part */
@@ -439,7 +460,23 @@ class Ysm_Search
 			$s_terms = implode(',', $s_terms);
 
 			$where['or'][] = "( t_tax.taxonomy IN ({$s_terms}) AND lower(t.name) LIKE %s )";
+		}
 
+		// restrict searching only in defined categories
+		if ( !empty( self::$fields['allowed_product_cat'] ) ) {
+			$allowed_product_cats = explode( ',', trim( self::$fields['allowed_product_cat'], ',' ) );
+			$allowed_product_cats_filtered = array();
+			foreach ( $allowed_product_cats as $allowed_product_cat ) {
+				$allowed_product_cat = trim( $allowed_product_cat );
+				if ( ! empty( $allowed_product_cat ) ) {
+					$allowed_product_cats_filtered[] = "'" . intval( $allowed_product_cat ) . "'";
+				}
+			}
+			$allowed_product_cats_filtered = implode( ",", $allowed_product_cats_filtered );
+			$where['and'][] = sprintf( "( p.post_type NOT IN ('product') OR ( p.post_type = 'product' AND t_tax.taxonomy = 'product_cat' AND t.term_id IN (%s) ) )", $allowed_product_cats_filtered );
+		}
+
+		if ( !empty( self::$terms ) || !empty( self::$fields['allowed_product_cat'] ) ) {
 			$join['t_rel'] = "LEFT JOIN {$wpdb->term_relationships} t_rel ON p.ID = t_rel.object_id";
 			$join['t_tax'] = "LEFT JOIN {$wpdb->term_taxonomy} t_tax ON t_tax.term_taxonomy_id = t_rel.term_taxonomy_id";
 			$join['t'] = "LEFT JOIN {$wpdb->terms} t ON t_tax.term_id = t.term_id";
@@ -543,12 +580,19 @@ class Ysm_Search
 			$post_title = preg_replace( '/'.self::$s.'/i', "<strong>$0</strong>", $post_title );
 			$output .=          '<div class="smart-search-post-title">' . $post_title . '</div>';
 
-			/* price */
-			if ( !empty(self::$display_opts['display_price']) && $post->post_type == 'product' && ysm_is_woocommerce_active() ) {
+			if ( 'product' === $post->post_type && ysm_is_woocommerce_active() ) {
 				$product = wc_get_product( $post->ID );
-				$output .= '<div class="smart-search-post-price">' . $product->get_price_html() . '</div>';
+				/* product price */
+				if ( !empty( self::$display_opts['display_price'] ) ) {
+					$output .= '<div class="smart-search-post-price">' . $product->get_price_html() . '</div>';
+				}
+				/* product sku */
+				if ( !empty( self::$display_opts['display_sku'] ) ) {
+					$output .= '<div class="smart-search-post-sku">' . esc_html( $product->get_sku() ) . '</div>';
+				}
 			}
 
+			$output .= '<div class="smart-search-clear"></div>';
 			$output .= '</div><!--.smart-search-post-holder-->';
 			$output .= '<div class="smart-search-clear"></div>';
 

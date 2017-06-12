@@ -677,6 +677,10 @@ a.woof_start_filtering_btn2{
     }
 }
 
+.easy-autocomplete-container ul{
+    margin: 0 !important;
+}
+
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 
@@ -691,4 +695,6 @@ a.woof_start_filtering_btn2{
 @media only screen and (max-width : 480px) {
 
 }
+
+
 

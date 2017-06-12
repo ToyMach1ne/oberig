@@ -90,7 +90,7 @@
   <div class="footer_bottom_part">
    <div class="container clearfix t_mxs_align_c">
      <p class="f_left f_mxs_none m_mxs_bottom_10">
-       © 2005 - <?php echo date("Y"); ?> <span class="color_light">Интернет-магазин цветов и подарков Обериг.</span>
+       <!-- © 2005 - <?php echo date("Y"); ?> <span class="color_light">Интернет-магазин цветов и подарков Обериг.</span> -->
      </p>
      <ul class="clearfix horizontal_list social_icons">
             <li class="facebook m_bottom_5 relative">
